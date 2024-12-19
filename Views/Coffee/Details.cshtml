@@ -1,0 +1,45 @@
+@model IEnumerable<WebApplication2.Models.Coffee>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_CoffeeLayout";
+}
+
+<link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
+
+<h1 style="margin-bottom: 10px"> Coffee Home </h1>
+
+<div>
+    <table class="detailTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Temp</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => data.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => data.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => data.Category)</td>
+                    <td>@Html.DisplayFor(modelItem => data.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => data.Temp)</td>
+                    <td>@Html.DisplayFor(modelItem => data.Price)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    end
+</div>
+
+
+
