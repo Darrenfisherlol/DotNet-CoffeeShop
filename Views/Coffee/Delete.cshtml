@@ -3,15 +3,45 @@
 <link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
 
-<h1 style="margin-bottom: 10px"> Coffee Home </h1>
+<h1 style="margin-bottom: 10px"> Coffee Delete </h1>
 
 @{
     ViewBag.Title = "title";
     Layout = "_CoffeeLayout";
 }
 
+@using (Html.BeginForm())
+{
+    
+    @Html.AntiForgeryToken()
+    
+    <div>
+        <div>
+            <h4>Input The Id You Want to Remove</h4>
 
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div >
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+        </div>
+        <div>
+            @Html.ValidationSummary(true)
 
+            <div class="form-group">
+                @Html.LabelFor(model => model.Id)
+                @Html.EditorFor(model => model.Id)
+                @Html.ValidationMessageFor(model => model.Id)
+            </div>
+
+        </div>
+
+    </div>
+    
+    <button type="submit">Delete</button>
+}
 <div>
+end
 </div>
 

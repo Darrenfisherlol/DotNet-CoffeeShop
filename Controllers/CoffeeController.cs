@@ -1,10 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WebApplication2.Data;
-using System.Collections.Generic;
-using System.Net;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.CodeAnalysis.Razor;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using WebApplication2.Data;
 using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
@@ -13,103 +11,103 @@ namespace WebApplication2.Controllers
     {
         private CoffeeContext _context = new CoffeeContext();
 
+        // GET: Coffee/Index
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: CoffeeController/Details/5
+        // GET: Coffee/Details/5
         public ActionResult Details()
         {
             return View(_context.Coffees.ToList());
         }
         
-       //GET: CoffeeController/Create
+        //GET: Coffee/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CoffeeOrder/Create
+        // POST: Coffee/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id, Name, Category, Temp, Description, Price")] Coffee coffeeInput)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(coffeeInput);  
-                await _context.SaveChangesAsync();  
-                return RedirectToAction(nameof(Details)); 
+                _context.Add(coffeeInput);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Details));
             }
+
             // Return the view with validation errors if any
-            return View(coffeeInput);  
+            return View(coffeeInput);
         }
         
-        
-        
-        
-        //
-        // // GET: Coffee/Edit/{id}
-        // public ActionResult Edit(int? id)
-        // {
-        //     // Retrieve the product by ID
-        //     var coffee = _context.Find(id);
-        //     if (coffee == null)
-        //     {
-        //         return NotFound(new { message="no id found"}); 
-        //     }
-        //
-        //     return View(coffee); // Return the product to the view for editing
-        // }
-        //
-        // // POST: Product/Edit/{id}
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public ActionResult Edit(Coffee model)
-        // {
-        //     if (ModelState.IsValid)
-        //     {
-        //         // Update the product in the database
-        //         _context.Update(model);
-        //         return RedirectToAction("Details"); // Redirect to another page, like Index or a details page
-        //     }
-        //
-        //     // If model is not valid, return the same view with validation messages
-        //     return View(model);
-        // }
-        //
-        //
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        // GET: CoffeeController/Delete/5
-        public ActionResult Delete(int id)
+        //GET: Coffee/Delete
+        public ActionResult Delete()
         {
             return View();
         }
 
-        // POST: CoffeeController/Delete/5
+        // POST: Coffee/Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(int id)
         {
-            try
+            var coffeeId = await _context.Coffees.FindAsync(id);
+
+            if (coffeeId == null)
             {
-                return RedirectToAction(nameof(Index));
+                TempData["ErrorMessage"] = "The specified ID does not exist.";
+                return RedirectToAction(nameof(Delete));
             }
-            catch
+
+            _context.Coffees.Remove(coffeeId);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        
+        //GET: Coffee/Edit
+        public async Task<IActionResult>  Edit(int? Id)
+        {
+            Coffee coffee = null;
+
+            if (Id != null)
             {
-                return View();
+                coffee = await _context.Coffees.FindAsync(Id);
+                
+                if (coffee == null)
+                {
+                    TempData["ErrorMessage"] = "The specified ID does not exist.";
+                    return RedirectToAction(nameof(Edit));
+                }
             }
+            
+            
+            return View(coffee);   
+        }
+
+        // POST: Coffee/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int? Id, Coffee coffeeInput)
+        {
+            if (Id != coffeeInput.Id || Id.HasValue)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(coffeeInput);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Details));
+            }
+            return View(coffeeInput);
         }
     }
 }

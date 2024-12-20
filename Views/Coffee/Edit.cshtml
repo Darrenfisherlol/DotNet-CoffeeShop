@@ -1,4 +1,5 @@
 @model WebApplication2.Models.Coffee
+@* @Model WebApplication2.Models.Coffee *@
 
 @{
     ViewBag.Title = "title";
@@ -8,43 +9,61 @@
 <link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
 
-<h1 style="margin-bottom: 10px"> Coffee Home </h1>
+<h1 style="margin-bottom: 10px"> Edit coffee </h1>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    @Html.HiddenFor(model => model.Id) <!-- Hidden field to keep track of the ID -->
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Name)
-        @Html.EditorFor(model => model.Name)
-        @Html.ValidationMessageFor(model => model.Name)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Category)
-        @Html.EditorFor(model => model.Category)
-        @Html.ValidationMessageFor(model => model.Category)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Description)
-        @Html.EditorFor(model => model.Description)
-        @Html.ValidationMessageFor(model => model.Description)
-    </div>    
-    <div class="form-group">
-        @Html.LabelFor(model => model.Temp)
-        @Html.EditorFor(model => model.Temp)
-        @Html.ValidationMessageFor(model => model.Temp)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Price)
-        @Html.EditorFor(model => model.Price)
-        @Html.ValidationMessageFor(model => model.Price)
-    </div>
-
-    <button type="submit" class="btn btn-primary">Save</button>
-}
 
 <div>
+   
+    @if (Model == null)
+    {
+        <form asp-action="Edit" method="get">
+
+            <div class="form-group">
+                <label asp-for="Id">Enter Coffee Id:</label>
+                <input type="number" name="Id" class="form-control" required="required"/>
+            </div>
+            <button type="submit" class="btn btn-primary"> Find Coffee Id </button>
+        </form>
+        
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div >
+                @TempData["ErrorMessage"]
+            </div>
+        }
+    }
+    else
+    {
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id"/>
+
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category"></label>
+                <input asp-for="Category" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Temp"></label>
+                <input asp-for="Temp" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary"> Save Changes </button>
+        </form>
+    }
+
+</div>
+
+<div>
+    edit done
 </div>
 
