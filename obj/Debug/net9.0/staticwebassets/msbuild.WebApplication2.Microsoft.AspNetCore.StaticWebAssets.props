@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>515mvqle78</Fingerprint>
-      <Integrity>B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y=</Integrity>
+      <Fingerprint>uqr8e7vjwk</Fingerprint>
+      <Integrity>djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\CoffeeStyle.css'))</OriginalItemSpec>

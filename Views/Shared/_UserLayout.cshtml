@@ -29,14 +29,58 @@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 
                 <ul class="navbar-nav flex-grow-1">
-                    
+
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Coffee" asp-action="Index">coffee</a>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Coffee
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Coffee" asp-action="Index">Home</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Coffee" asp-action="Details">Details</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Coffee" asp-action="Create">Create</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Coffee" asp-action="Edit">Edit</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Coffee" asp-action="Delete">Delete</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                User
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Index">Home</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Details">Details</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Create">Create</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Edit">Edit</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Delete">Delete</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">user</a>
-                    </li>
                 </ul>
                 
             </div>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zAAoSllXvNOrjMKsBDxsquQ6u2EmG16+P30rKkHkPpA=",
+  "Hash": "HKTJzWEbf+T+3cfi0VUO3PdMsmdvs9nGEtlqHcEbeUA=",
   "Source": "WebApplication2",
   "BasePath": "_content/WebApplication2",
   "Mode": "Default",
@@ -983,12 +983,12 @@
       "OriginalItemSpec": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-515mvqle78.gz",
+      "Identity": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-uqr8e7vjwk.gz",
       "SourceId": "WebApplication2",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/WebApplication2",
-      "RelativePath": "css/CoffeeStyle#[.{fingerprint=515mvqle78}]?.css.gz",
+      "RelativePath": "css/CoffeeStyle#[.{fingerprint=uqr8e7vjwk}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -997,8 +997,8 @@
       "RelatedAsset": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\css\\CoffeeStyle.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "aaqlnmx2sj",
-      "Integrity": "rmgjzifRU7e5tdVazRwquNF5tBzTUEXtTZcKBy6Y4l8=",
+      "Fingerprint": "l8tpd2284m",
+      "Integrity": "uwp/cVzt1E+K38Kv/bKy8eDrUppJtuTyy8NTZQcIsoM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\css\\CoffeeStyle.css"
@@ -1459,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "515mvqle78",
-      "Integrity": "B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y=",
+      "Fingerprint": "uqr8e7vjwk",
+      "Integrity": "djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\CoffeeStyle.css"
@@ -2812,13 +2812,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/CoffeeStyle.515mvqle78.css",
-      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-515mvqle78.gz",
+      "Route": "css/CoffeeStyle.css",
+      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-uqr8e7vjwk.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003937007874"
+          "Quality": "0.002141327623"
         }
       ],
       "ResponseHeaders": [
@@ -2828,19 +2828,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "253"
+          "Value": "466"
         },
         {
           "Name": "ETag",
-          "Value": "\"rmgjzifRU7e5tdVazRwquNF5tBzTUEXtTZcKBy6Y4l8=\""
+          "Value": "\"uwp/cVzt1E+K38Kv/bKy8eDrUppJtuTyy8NTZQcIsoM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Dec 2024 21:25:01 GMT"
+          "Value": "Mon, 23 Dec 2024 18:08:19 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -2856,27 +2856,56 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y=\""
+          "Value": "W/\"djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "515mvqle78"
-        },
-        {
-          "Name": "label",
-          "Value": "css/CoffeeStyle.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y="
+          "Value": "sha256-djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU="
         }
       ]
     },
     {
-      "Route": "css/CoffeeStyle.515mvqle78.css",
+      "Route": "css/CoffeeStyle.css",
       "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\css\\CoffeeStyle.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1156"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 18:08:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU="
+        }
+      ]
+    },
+    {
+      "Route": "css/CoffeeStyle.css.gz",
+      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-uqr8e7vjwk.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2893,11 +2922,119 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y=\""
+          "Value": "\"uwp/cVzt1E+K38Kv/bKy8eDrUppJtuTyy8NTZQcIsoM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Dec 2024 21:25:01 GMT"
+          "Value": "Mon, 23 Dec 2024 18:08:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uwp/cVzt1E+K38Kv/bKy8eDrUppJtuTyy8NTZQcIsoM="
+        }
+      ]
+    },
+    {
+      "Route": "css/CoffeeStyle.uqr8e7vjwk.css",
+      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-uqr8e7vjwk.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002141327623"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "466"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uwp/cVzt1E+K38Kv/bKy8eDrUppJtuTyy8NTZQcIsoM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 18:08:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uqr8e7vjwk"
+        },
+        {
+          "Name": "label",
+          "Value": "css/CoffeeStyle.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU="
+        }
+      ]
+    },
+    {
+      "Route": "css/CoffeeStyle.uqr8e7vjwk.css",
+      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\css\\CoffeeStyle.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1156"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 18:08:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2907,7 +3044,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "515mvqle78"
+          "Value": "uqr8e7vjwk"
         },
         {
           "Name": "label",
@@ -2915,13 +3052,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y="
+          "Value": "sha256-djgZpgE6B3IiiFWGrUXR6/rJNM78Ubi4+AeqcO563eU="
         }
       ]
     },
     {
-      "Route": "css/CoffeeStyle.515mvqle78.css.gz",
-      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-515mvqle78.gz",
+      "Route": "css/CoffeeStyle.uqr8e7vjwk.css.gz",
+      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-uqr8e7vjwk.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2930,7 +3067,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "253"
+          "Value": "466"
         },
         {
           "Name": "Content-Type",
@@ -2938,11 +3075,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rmgjzifRU7e5tdVazRwquNF5tBzTUEXtTZcKBy6Y4l8=\""
+          "Value": "\"uwp/cVzt1E+K38Kv/bKy8eDrUppJtuTyy8NTZQcIsoM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 20 Dec 2024 21:25:01 GMT"
+          "Value": "Mon, 23 Dec 2024 18:08:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2960,7 +3097,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "515mvqle78"
+          "Value": "uqr8e7vjwk"
         },
         {
           "Name": "label",
@@ -2968,144 +3105,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rmgjzifRU7e5tdVazRwquNF5tBzTUEXtTZcKBy6Y4l8="
-        }
-      ]
-    },
-    {
-      "Route": "css/CoffeeStyle.css",
-      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-515mvqle78.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.003937007874"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "253"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rmgjzifRU7e5tdVazRwquNF5tBzTUEXtTZcKBy6Y4l8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 20 Dec 2024 21:25:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y="
-        }
-      ]
-    },
-    {
-      "Route": "css/CoffeeStyle.css",
-      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\css\\CoffeeStyle.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "466"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 20 Dec 2024 21:25:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-B0a2FOQBJYKeRXQD8Lj2jhGI4OWTA9EgVXL1z548a2Y="
-        }
-      ]
-    },
-    {
-      "Route": "css/CoffeeStyle.css.gz",
-      "AssetFile": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\Debug\\net9.0\\compressed\\qs3z734a9y-515mvqle78.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "253"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rmgjzifRU7e5tdVazRwquNF5tBzTUEXtTZcKBy6Y4l8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 20 Dec 2024 21:25:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-rmgjzifRU7e5tdVazRwquNF5tBzTUEXtTZcKBy6Y4l8="
+          "Value": "sha256-uwp/cVzt1E+K38Kv/bKy8eDrUppJtuTyy8NTZQcIsoM="
         }
       ]
     },
