@@ -20,6 +20,7 @@ namespace WebApplication2.Controllers
         // GET: Coffee/Details/5
         public ActionResult Details()
         {
+            ViewBag.User = _context.Users.FirstOrDefault();
             return View(_context.Coffees.ToList());
         }
         
