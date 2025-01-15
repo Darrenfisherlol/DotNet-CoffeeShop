@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebApplication2.r3lnqb1i7l.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\css\\AboutUsStyle.css",
+      "PackagePath": "staticwebassets\\css\\AboutUsStyle.css"
+    },
+    {
       "Id": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\wwwroot\\css\\CoffeeStyle.css",
       "PackagePath": "staticwebassets\\css\\CoffeeStyle.css"
     },

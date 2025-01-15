@@ -41,7 +41,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 20px;
 
 }
 .sectionTwoInnerContainerRight{
@@ -70,6 +70,45 @@
     padding: .5rem;
     margin: 2rem;
 }
+
+
+
+/* section 4  (2 but flipped)*/
+.sectionFour{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sectionFourInnerContainer{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
+    /*flex box multiple divs*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.sectionFourInnerContainerLeft{
+    max-height: 25rem;
+    
+}
+.sectionFourInnerContainerRight{
+    max-width: 25rem;
+
+}
+
+
+
+
+
+
+
+
 
 /*Detail*/
 

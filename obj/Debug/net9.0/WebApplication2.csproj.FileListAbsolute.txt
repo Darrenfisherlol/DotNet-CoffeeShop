@@ -313,4 +313,5 @@ C:\Users\DarrenFisher\Documents\Code\Learn\mvc\WebApplication2\WebApplication2\b
 C:\Users\DarrenFisher\Documents\Code\Learn\mvc\WebApplication2\WebApplication2\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\DarrenFisher\Documents\Code\Learn\mvc\WebApplication2\WebApplication2\obj\Debug\net9.0\compressed\rjaplpwhcx-exzx77xu67.gz
 C:\Users\DarrenFisher\Documents\Code\Learn\mvc\WebApplication2\WebApplication2\obj\Debug\net9.0\WebApplication2.sourcelink.json
-C:\Users\DarrenFisher\Documents\Code\Learn\mvc\WebApplication2\WebApplication2\obj\Debug\net9.0\compressed\qs3z734a9y-uqr8e7vjwk.gz
+C:\Users\DarrenFisher\Documents\Code\Learn\mvc\WebApplication2\WebApplication2\obj\Debug\net9.0\compressed\qs3z734a9y-8wppkwluol.gz
+C:\Users\DarrenFisher\Documents\Code\Learn\mvc\WebApplication2\WebApplication2\obj\Debug\net9.0\compressed\pkbd5t11bj-m9pbawngut.gz
