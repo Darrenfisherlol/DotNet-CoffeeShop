@@ -12,7 +12,7 @@ namespace WebApplication2.Controllers
         private CoffeeContext _context = new CoffeeContext();
 
         // GET: Order/Index
-        public ActionResult Index()
+        public ActionResult OrderHub()
         {
             return View();
         }

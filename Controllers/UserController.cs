@@ -7,7 +7,7 @@ namespace WebApplication2.Controllers
         
         
         // GET: UserController
-        public ActionResult Index()
+        public ActionResult UserHub()
         {
             return View();
         }

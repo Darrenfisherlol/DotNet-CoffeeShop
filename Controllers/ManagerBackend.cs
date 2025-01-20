@@ -10,7 +10,7 @@ namespace WebApplication2.Controllers
     public class ManagerBackendController : Controller
     {
         // GET: ManagerBackend/Index
-        public ActionResult Index()
+        public ActionResult ManagerBackendHub()
         {
             return View();
         }

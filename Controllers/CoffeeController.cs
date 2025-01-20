@@ -11,8 +11,8 @@ namespace WebApplication2.Controllers
     {
         private CoffeeContext _context = new CoffeeContext();
 
-        // GET: Coffee/Index
-        public ActionResult Index()
+        // GET: Coffee/CoffeeHub
+        public ActionResult CoffeeHub()
         {
             return View();
         }
@@ -68,7 +68,7 @@ namespace WebApplication2.Controllers
             _context.Coffees.Remove(coffeeId);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(CoffeeHub));
         }
 
         

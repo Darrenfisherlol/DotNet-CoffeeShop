@@ -6233,25 +6233,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DarrenFisher\\.nuget\\packages\\": {}
+    "C:\\Users\\darre\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
-      "packagesPath": "C:\\Users\\DarrenFisher\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DarrenFisher\\Documents\\Code\\Learn\\mvc\\WebApplication2\\WebApplication2\\obj\\",
+      "projectPath": "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\WebApplication2.csproj",
+      "packagesPath": "C:\\Users\\darre\\.nuget\\packages\\",
+      "outputPath": "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\obj\\",
       "projectStyle": "PackageReference",
-      "UsingMicrosoftNETSdk": false,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\DarrenFisher\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\darre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6269,7 +6275,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "all"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -6313,7 +6320,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\darre\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
