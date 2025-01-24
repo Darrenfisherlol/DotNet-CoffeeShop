@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlckJhY2tlbmRcTWFuYWdlckJhY2tlbmRIdWIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Menu/MenuHub.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxNZW51SHViLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Order/OrderHub.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJIdWIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
