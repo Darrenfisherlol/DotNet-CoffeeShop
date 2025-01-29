@@ -23,8 +23,6 @@ namespace WebApplication2.Models
             this.Description = description;
             this.Price = price;
         }
-        
     }
-    
 }
 

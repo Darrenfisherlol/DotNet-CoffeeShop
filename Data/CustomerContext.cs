@@ -3,14 +3,14 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Data
 {
-    public class CoffeeContext : DbContext
+    public class CustomerContext : DbContext
     {
-        public CoffeeContext(DbContextOptions<CoffeeContext> options) : base(options) { }
+        public CustomerContext(DbContextOptions<CustomerContext> options) : base(options) { }
 
-        public CoffeeContext ()
+        public CustomerContext ()
         {}
 
-        public DbSet<Coffee> Coffees { get; set; } 
+        public DbSet<Customer> Customers { get; set; } 
         public DbSet<Customer> Customer { get; set; } 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

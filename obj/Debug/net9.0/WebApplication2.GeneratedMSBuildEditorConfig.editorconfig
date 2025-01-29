@@ -52,6 +52,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29mZmVlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Customer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Customer/CustomerHub.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdG9tZXJIdWIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Customer/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Customer/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Customer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/ManagerBackend/ManagerBackendHub.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlckJhY2tlbmRcTWFuYWdlckJhY2tlbmRIdWIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,8 +80,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxNZW51SHViLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Order/OrderHub.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJIdWIuY3NodG1s
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Sale/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Sale/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Sale/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Sale/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Sale/SaleHub.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxTYWxlSHViLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Shared/Error.cshtml]
@@ -78,26 +114,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/User/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/User/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/User/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/User/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/User/UserHub.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VySHViLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [I:/Coding/Projects/CoffeeDev/CofeDevMAIN/DotNet-CoffeeShop/Views/_ViewImports.cshtml]

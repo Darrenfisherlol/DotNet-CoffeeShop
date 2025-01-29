@@ -1,88 +1,84 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Razor;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WebApplication2.Data;
 using WebApplication2.Models;
 
-
 namespace WebApplication2.Controllers
 {
-    public class CoffeeController : Controller
+    public class SaleController : Controller
     {
-        private CoffeeContext _context = new CoffeeContext();
+        private SaleContext _context = new SaleContext();
 
-        // GET: Coffee/CoffeeHub
-        public ActionResult CoffeeHub()
+        
+        // GET: Sale/CustomerHub
+        public ActionResult CustomerHub()
         {
             return View();
         }
 
-        // GET: Coffee/Details/5
-        public ActionResult Details()
+        // GET: Sale/Details
+        public ActionResult Details(int id)
         {
-            ViewBag.User = _context.Coffees.FirstOrDefault();
-            return View(_context.Coffees.ToList());
+            ViewBag.User = _context.Sale.FirstOrDefault();
+            return View(_context.Sale.ToList());
         }
-        
-        //GET: Coffee/Create
+
+        // GET: Sale/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Coffee/Create
+        // POST: Sale/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, Name, Category, Temp, Description, Price")] Coffee coffeeInput)
+        public async Task<IActionResult> Create([Bind("Id, UserId, CoffeeId, Quantity, OrderDateTime")] Sale saleInput)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(coffeeInput);
+                _context.Add(saleInput);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Details));
             }
 
             // Return the view with validation errors if any
-            return View(coffeeInput);
+            return View(saleInput);
         }
-        
-        //GET: Coffee/Delete
+
+        // GET: Sale/Edit
         public ActionResult Delete()
         {
             return View();
         }
 
-        // POST: Coffee/Delete
+        // POST: Sale/Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var coffeeId = await _context.Coffees.FindAsync(id);
+            var saleId = await _context.Sale.FindAsync(id);
 
-            if (coffeeId == null)
+            if (saleId == null)
             {
                 TempData["ErrorMessage"] = "The specified ID does not exist.";
                 return RedirectToAction(nameof(Delete));
             }
 
-            _context.Coffees.Remove(coffeeId);
+            _context.Sale.Remove(saleId);
             await _context.SaveChangesAsync();
-
-            return RedirectToAction(nameof(CoffeeHub));
+            
+            
+            return RedirectToAction(nameof(Details));
         }
-
-        
-        //GET: Coffee/Edit
+        //GET: Sale/Edit
         public async Task<IActionResult>  Edit(int? Id)
         {
-            Coffee coffee = null;
+            Sale sale = null;
 
             if (Id != null)
             {
-                coffee = await _context.Coffees.FindAsync(Id);
+                sale = await _context.Sale.FindAsync(Id);
                 
-                if (coffee == null)
+                if (sale == null)
                 {
                     TempData["ErrorMessage"] = "The specified ID does not exist.";
                     return RedirectToAction(nameof(Edit));
@@ -90,26 +86,27 @@ namespace WebApplication2.Controllers
             }
             
             
-            return View(coffee);   
+            return View(sale);   
         }
-
-        // POST: Coffee/Edit
+        
+        // POST: Sale/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, Coffee coffeeInput)
+        public async Task<IActionResult> Edit(int? id, Sale saleInput)
         {
-            if (id != coffeeInput.Id || id.HasValue)
+            if (id != saleInput.Id || id.HasValue)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                _context.Update(coffeeInput);
+                _context.Update(saleInput);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Details));
             }
-            return View(coffeeInput);
+            return View(saleInput);
         }
+    
     }
 }

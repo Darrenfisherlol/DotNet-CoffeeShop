@@ -1,0 +1,43 @@
+@model WebApplication2.Models.Customer
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>delete</h2>
+
+
+@using (Html.BeginForm())
+{
+    
+    @Html.AntiForgeryToken()
+    
+    <div>
+        <div>
+            <h4>Input The Id You Want to Remove</h4>
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div >
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+        </div>
+        <div>
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Id)
+                @Html.EditorFor(model => model.Id)
+                @Html.ValidationMessageFor(model => model.Id)
+            </div>
+
+        </div>
+
+    </div>
+    
+    <button type="submit">Delete</button>
+}
+<div>
+    end
+</div>
