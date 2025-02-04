@@ -10,8 +10,7 @@ namespace WebApplication2.Data
         public SaleContext ()
         {}
 
-        public DbSet<Sale> Sale { get; set; } 
-        public DbSet<Customer> Customer { get; set; } 
+        public DbSet<Sale> Sales { get; set; } 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,5 +18,19 @@ namespace WebApplication2.Data
                 "Host=localhost;Database=postgres;Username=postgres;Password=postgres"
             );
         }
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Sale>()
+                .HasOne(s => s.Customer)
+                .WithMany()
+                .HasForeignKey(s => s.CustomerId);
+
+            modelBuilder.Entity<Sale>()
+                .HasOne(s => s.Coffee)
+                .WithMany()
+                .HasForeignKey(s => s.CoffeeId);
+        }
+        
     }
 }

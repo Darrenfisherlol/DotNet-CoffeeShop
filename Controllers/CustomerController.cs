@@ -18,8 +18,8 @@ namespace WebApplication2.Controllers
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-            ViewBag.User = _context.Customer.FirstOrDefault();
-            return View(_context.Customer.ToList());
+            ViewBag.User = _context.Customers.FirstOrDefault();
+            return View(_context.Customers.ToList());
         }
 
         // GET: Customer/Create
@@ -55,7 +55,7 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var customerId = await _context.Customer.FindAsync(id);
+            var customerId = await _context.Customers.FindAsync(id);
 
             if (customerId == null)
             {
@@ -63,7 +63,7 @@ namespace WebApplication2.Controllers
                 return RedirectToAction(nameof(Delete));
             }
 
-            _context.Customer.Remove(customerId);
+            _context.Customers.Remove(customerId);
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(CustomerHub));
@@ -75,7 +75,7 @@ namespace WebApplication2.Controllers
 
             if (Id != null)
             {
-                customer = await _context.Customer.FindAsync(Id);
+                customer = await _context.Customers.FindAsync(Id);
                 
                 if (customer == null)
                 {

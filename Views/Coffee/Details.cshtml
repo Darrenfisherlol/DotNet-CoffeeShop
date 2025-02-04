@@ -1,4 +1,6 @@
-@model IEnumerable<WebApplication2.Models.Coffee>
+@using WebApplication2.Models
+
+@model WebApplication2.Models.Coffee
 
 @{
     ViewBag.Title = "title";
@@ -9,6 +11,9 @@
 
 <h1 style="margin-bottom: 10px"> Coffee Home </h1>
 
+@{
+    Model.
+}
 <div>
     <table class="detailTable">
         <thead>
@@ -25,12 +30,12 @@
             @foreach (var data in Model)
             {
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => data.Id)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Category)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Description)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Temp)</td>
-                    <td>@Html.DisplayFor(modelItem => data.Price)</td>
+                    <td>@data.Id</td>
+                    <td>@data.Name)</td>
+                    <td>@data.Category)</td>
+                    <td>@data.Description)</td>
+                    <td>@data.Temp)</td>
+                    <td>@data.Price)</td>
                 </tr>
             }
         </tbody>

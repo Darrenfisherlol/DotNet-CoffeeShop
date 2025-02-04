@@ -1,4 +1,4 @@
-@model IEnumerable<WebApplication2.Models.Sale>
+@model WebApplication2.Models.Sale
 
 @{
     ViewBag.Title = "title";
@@ -25,7 +25,7 @@
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => data.Id)</td>
-                    <td>@Html.DisplayFor(modelItem => data.UserId)</td>
+                    <td>@Html.DisplayFor(modelItem => data.CustomerId)</td>
                     <td>@Html.DisplayFor(modelItem => data.CoffeeId)</td>
                     <td>@Html.DisplayFor(modelItem => data.Quantity)</td>
                     <td>@Html.DisplayFor(modelItem => data.OrderDateTime)</td>

@@ -11,13 +11,21 @@ namespace WebApplication2.Data
         {}
 
         public DbSet<Customer> Customers { get; set; } 
-        public DbSet<Customer> Customer { get; set; } 
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(
                 "Host=localhost;Database=postgres;Username=postgres;Password=postgres"
             );
         }
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>()
+                .HasMany<Sale>()
+                .WithOne(c => c.Customer)
+                .HasForeignKey(c => c.CustomerId);
+        }
+        
     }
 }

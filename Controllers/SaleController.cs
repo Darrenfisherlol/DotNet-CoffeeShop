@@ -18,8 +18,8 @@ namespace WebApplication2.Controllers
         // GET: Sale/Details
         public ActionResult Details(int id)
         {
-            ViewBag.User = _context.Sale.FirstOrDefault();
-            return View(_context.Sale.ToList());
+            ViewBag.User = _context.Sales.FirstOrDefault();
+            return View(_context.Sales.ToList());
         }
 
         // GET: Sale/Create
@@ -55,7 +55,7 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var saleId = await _context.Sale.FindAsync(id);
+            var saleId = await _context.Sales.FindAsync(id);
 
             if (saleId == null)
             {
@@ -63,7 +63,7 @@ namespace WebApplication2.Controllers
                 return RedirectToAction(nameof(Delete));
             }
 
-            _context.Sale.Remove(saleId);
+            _context.Sales.Remove(saleId);
             await _context.SaveChangesAsync();
             
             
@@ -76,7 +76,7 @@ namespace WebApplication2.Controllers
 
             if (Id != null)
             {
-                sale = await _context.Sale.FindAsync(Id);
+                sale = await _context.Sales.FindAsync(Id);
                 
                 if (sale == null)
                 {

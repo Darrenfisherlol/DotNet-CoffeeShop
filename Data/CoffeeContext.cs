@@ -11,7 +11,6 @@ namespace WebApplication2.Data
         {}
 
         public DbSet<Coffee> Coffees { get; set; } 
-        public DbSet<Customer> Customer { get; set; } 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,5 +18,14 @@ namespace WebApplication2.Data
                 "Host=localhost;Database=postgres;Username=postgres;Password=postgres"
             );
         }
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Coffee>()
+                .HasMany<Sale>()
+                .WithOne(s => s.Coffee)
+                .HasForeignKey(s => s.CoffeeId);
+        }
+        
     }
 }
