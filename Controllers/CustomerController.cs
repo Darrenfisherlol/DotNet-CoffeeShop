@@ -18,7 +18,6 @@ namespace WebApplication2.Controllers
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-            ViewBag.User = _context.Customers.FirstOrDefault();
             return View(_context.Customers.ToList());
         }
 
@@ -79,7 +78,6 @@ namespace WebApplication2.Controllers
                 
                 if (customer == null)
                 {
-                    TempData["ErrorMessage"] = "The specified ID does not exist.";
                     return RedirectToAction(nameof(Edit));
                 }
             }

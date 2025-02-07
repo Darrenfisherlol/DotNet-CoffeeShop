@@ -8,10 +8,10 @@ using WebApplication2.Data;
 
 #nullable disable
 
-namespace Migrations
+namespace WebApplication2.Migrations.Sale
 {
-    [DbContext(typeof(CoffeeContext))]
-    partial class CoffeeContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(SaleContext))]
+    partial class SaleContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -51,7 +51,7 @@ namespace Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coffees");
+                    b.ToTable("Coffee");
                 });
 
             modelBuilder.Entity("WebApplication2.Models.Customer", b =>
@@ -100,6 +100,9 @@ namespace Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("CustomerId1")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("OrderDateTime")
                         .HasColumnType("timestamp with time zone");
 
@@ -114,7 +117,9 @@ namespace Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Sale");
+                    b.HasIndex("CustomerId1");
+
+                    b.ToTable("Sales");
                 });
 
             modelBuilder.Entity("WebApplication2.Models.Sale", b =>
@@ -130,10 +135,14 @@ namespace Migrations
                         .HasForeignKey("CoffeeId1");
 
                     b.HasOne("WebApplication2.Models.Customer", "Customer")
-                        .WithMany("Sales")
+                        .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("WebApplication2.Models.Customer", null)
+                        .WithMany("Sales")
+                        .HasForeignKey("CustomerId1");
 
                     b.Navigation("Coffee");
 

@@ -7,7 +7,7 @@ namespace WebApplication2.Models
         public int Id { get; set; }
         public int CustomerId { get; set; }
         public Customer Customer { get; set; } 
-        public string CoffeeId { get; set; }
+        public int CoffeeId { get; set; }
         public Coffee Coffee { get; set; } 
         public int Quantity { get; set; }
         public DateTime OrderDateTime { get; set; }
@@ -16,7 +16,7 @@ namespace WebApplication2.Models
         public Sale()
         {
         }
-        public Sale (int id, int customerId, string coffeeId, int quantity, DateTime orderDateTime)
+        public Sale (int id, int customerId, int coffeeId, int quantity, DateTime orderDateTime)
         {
             this.Id = id;
             this.CustomerId = customerId;

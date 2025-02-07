@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WebApplication2.Data;
 using WebApplication2.Models;
+using System.Linq;
+using System.Collections.Generic;
+
 
 
 namespace WebApplication2.Controllers
@@ -18,10 +21,9 @@ namespace WebApplication2.Controllers
             return View();
         }
 
-        // GET: Coffee/Details/5
+        // GET: Coffee/Details
         public ActionResult Details()
         {
-            ViewBag.User = _context.Coffees.FirstOrDefault();
             return View(_context.Coffees.ToList());
         }
         
@@ -30,12 +32,23 @@ namespace WebApplication2.Controllers
         {
             return View();
         }
-
+        
         // POST: Coffee/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id, Name, Category, Temp, Description, Price")] Coffee coffeeInput)
         {
+
+            using (var context = new CoffeeContext())
+            {
+                var cof = await context.Coffees.FindAsync(coffeeInput.Id);
+                if (coffeeInput.Id == 0 || cof is not null)
+                {
+                    return View();
+                }
+            }
+            
+           
             if (ModelState.IsValid)
             {
                 _context.Add(coffeeInput);

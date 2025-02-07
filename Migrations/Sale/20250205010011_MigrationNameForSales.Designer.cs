@@ -2,18 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebApplication2.Data;
 
 #nullable disable
 
-namespace Migrations
+namespace WebApplication2.Migrations.Sale
 {
-    [DbContext(typeof(CoffeeContext))]
-    partial class CoffeeContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(SaleContext))]
+    [Migration("20250205010011_MigrationNameForSales")]
+    partial class MigrationNameForSales
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coffees");
+                    b.ToTable("Coffee");
                 });
 
             modelBuilder.Entity("WebApplication2.Models.Customer", b =>
@@ -100,6 +103,9 @@ namespace Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("CustomerId1")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("OrderDateTime")
                         .HasColumnType("timestamp with time zone");
 
@@ -114,7 +120,9 @@ namespace Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Sale");
+                    b.HasIndex("CustomerId1");
+
+                    b.ToTable("Sales");
                 });
 
             modelBuilder.Entity("WebApplication2.Models.Sale", b =>
@@ -130,10 +138,14 @@ namespace Migrations
                         .HasForeignKey("CoffeeId1");
 
                     b.HasOne("WebApplication2.Models.Customer", "Customer")
-                        .WithMany("Sales")
+                        .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("WebApplication2.Models.Customer", null)
+                        .WithMany("Sales")
+                        .HasForeignKey("CustomerId1");
 
                     b.Navigation("Coffee");
 

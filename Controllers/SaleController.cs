@@ -16,9 +16,8 @@ namespace WebApplication2.Controllers
         }
 
         // GET: Sale/Details
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            ViewBag.User = _context.Sales.FirstOrDefault();
             return View(_context.Sales.ToList());
         }
 

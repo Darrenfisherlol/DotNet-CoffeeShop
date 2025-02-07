@@ -2,18 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebApplication2.Data;
 
 #nullable disable
 
-namespace Migrations
+namespace WebApplication2.Migrations
 {
-    [DbContext(typeof(CoffeeContext))]
-    partial class CoffeeContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CustomerContext))]
+    [Migration("20250205005037_MigrationNameForCustomer")]
+    partial class MigrationNameForCustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coffees");
+                    b.ToTable("Coffee");
                 });
 
             modelBuilder.Entity("WebApplication2.Models.Customer", b =>
@@ -80,7 +83,7 @@ namespace Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("WebApplication2.Models.Sale", b =>
@@ -91,13 +94,17 @@ namespace Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CoffeeId")
-                        .HasColumnType("integer");
+                    b.Property<string>("CoffeeId")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<int?>("CoffeeId1")
+                    b.Property<int>("CoffeeId1")
                         .HasColumnType("integer");
 
                     b.Property<int>("CustomerId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("CustomerId1")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("OrderDateTime")
@@ -108,11 +115,11 @@ namespace Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CoffeeId");
-
                     b.HasIndex("CoffeeId1");
 
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("CustomerId1");
 
                     b.ToTable("Sale");
                 });
@@ -120,20 +127,20 @@ namespace Migrations
             modelBuilder.Entity("WebApplication2.Models.Sale", b =>
                 {
                     b.HasOne("WebApplication2.Models.Coffee", "Coffee")
-                        .WithMany()
-                        .HasForeignKey("CoffeeId")
+                        .WithMany("Sales")
+                        .HasForeignKey("CoffeeId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApplication2.Models.Coffee", null)
-                        .WithMany("Sales")
-                        .HasForeignKey("CoffeeId1");
-
                     b.HasOne("WebApplication2.Models.Customer", "Customer")
-                        .WithMany("Sales")
+                        .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("WebApplication2.Models.Customer", null)
+                        .WithMany("Sales")
+                        .HasForeignKey("CustomerId1");
 
                     b.Navigation("Coffee");
 
