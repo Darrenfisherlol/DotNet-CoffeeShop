@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol;
 using WebApplication2.Data;
@@ -9,16 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Add Database connection wtih the npgsql lib as we link it to the docker container
-builder.Services.AddDbContext<CoffeeContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("Host=localhost;Database=postgres;Username=postgres;Password=abc")));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Host=localhost;Database=postgres;Username=postgres;Password=postgres")));
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Coffee/CoffeeHub");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }

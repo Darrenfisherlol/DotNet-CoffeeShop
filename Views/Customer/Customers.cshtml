@@ -1,0 +1,54 @@
+@model List<WebApplication2.Models.Customer>
+
+<link href="~/css/UserStyle.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_UserLayout";
+}
+
+
+<h1 style="margin-bottom: 10px"> Customer Home </h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>lastName</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var customer in Model)
+                {
+                    <tr>
+                        <td>
+                            @customer.Id
+                        </td>
+                        <td>
+                            @customer.FistName
+                        </td>
+                        <td>
+                            @customer.LastName
+                        </td>
+                        <td>
+                            @customer.Email
+                        </td>
+                        <td>
+                            @customer.Phone
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@customer.Id">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@customer.Id">Delete</a>
+                        </td>
+                    </tr>    
+                }
+            }
+        </tbody>
+    </table>
+</div>
