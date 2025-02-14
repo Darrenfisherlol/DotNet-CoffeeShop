@@ -9,7 +9,7 @@ namespace WebApplication2.Controllers
 {
     public class MenuController : Controller
     {
-        private CoffeeContext _context = new CoffeeContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
 
         // GET: Menu/MenuHub
         public ActionResult MenuHub()

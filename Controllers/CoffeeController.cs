@@ -13,33 +13,29 @@ namespace WebApplication2.Controllers
 {
     public class CoffeeController : Controller
     {
-        private CoffeeContext _context = new CoffeeContext();
-
-        // GET: Coffee/CoffeeHub
+        private ApplicationDbContext _context = new ApplicationDbContext();
+        
         public ActionResult CoffeeHub()
         {
             return View();
         }
 
-        // GET: Coffee/Details
         public ActionResult Details()
         {
             return View(_context.Coffees.ToList());
         }
         
-        //GET: Coffee/Create
         public ActionResult Create()
         {
             return View();
         }
         
-        // POST: Coffee/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id, Name, Category, Temp, Description, Price")] Coffee coffeeInput)
         {
 
-            using (var context = new CoffeeContext())
+            using (var context = new ApplicationDbContext())
             {
                 var cof = await context.Coffees.FindAsync(coffeeInput.Id);
                 if (coffeeInput.Id == 0 || cof is not null)
@@ -48,7 +44,6 @@ namespace WebApplication2.Controllers
                 }
             }
             
-           
             if (ModelState.IsValid)
             {
                 _context.Add(coffeeInput);
@@ -56,37 +51,41 @@ namespace WebApplication2.Controllers
                 return RedirectToAction(nameof(Details));
             }
 
-            // Return the view with validation errors if any
             return View(coffeeInput);
         }
         
-        //GET: Coffee/Delete
-        public ActionResult Delete()
+        public async Task<IActionResult> Delete(int? id)
         {
-            return View();
-        }
-
-        // POST: Coffee/Delete
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var coffeeId = await _context.Coffees.FindAsync(id);
-
-            if (coffeeId == null)
+            if (id == null)
             {
-                TempData["ErrorMessage"] = "The specified ID does not exist.";
-                return RedirectToAction(nameof(Delete));
+                return NotFound();
             }
 
-            _context.Coffees.Remove(coffeeId);
-            await _context.SaveChangesAsync();
+            var coffee = await _context.Coffees.FindAsync(id);
+            
+            if (coffee == null)
+            {
+                return NotFound();
+            }
 
-            return RedirectToAction(nameof(CoffeeHub));
+            return View(coffee);
         }
 
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var coffee = await _context.Coffees.FindAsync(id);
         
-        //GET: Coffee/Edit
+            if (coffee != null)
+            {
+                _context.Coffees.Remove(coffee);
+                await _context.SaveChangesAsync();
+            }
+        
+            return RedirectToAction(nameof(Details));
+        }
+        
         public async Task<IActionResult>  Edit(int? Id)
         {
             Coffee coffee = null;
@@ -102,11 +101,9 @@ namespace WebApplication2.Controllers
                 }
             }
             
-            
             return View(coffee);   
         }
 
-        // POST: Coffee/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, Coffee coffeeInput)

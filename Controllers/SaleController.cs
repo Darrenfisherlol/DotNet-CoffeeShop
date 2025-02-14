@@ -6,7 +6,7 @@ namespace WebApplication2.Controllers
 {
     public class SaleController : Controller
     {
-        private SaleContext _context = new SaleContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
 
         
         // GET: Sale/CustomerHub

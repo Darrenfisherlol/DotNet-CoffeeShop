@@ -9,7 +9,7 @@ namespace WebApplication2.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public ICollection<Sale> Sales { get; set; } = new List<Sale>();
+        public ICollection<Sale> Sales { get; set; }
 
         
         public Customer()

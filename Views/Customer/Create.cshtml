@@ -1,4 +1,4 @@
-@using Microsoft.VisualStudio.Web.CodeGenerators.Mvc
+
 @model WebApplication2.Models.Customer
 
 @{
@@ -8,6 +8,22 @@
 
 <h2>create</h2>
 
+<form asp-action="CreateCustomerForm" asp-controller="Customer">
+    <label>Id</label>
+    <input class="form-control" type="number" asp-action="Id"/>
+    <label class="mt-2">FistName</label>
+    <input class="form-control" type="text" asp-action="FistName"/>
+    <label class="mt-2">LastName</label>
+    <input class="form-control" type="text" asp-action="LastName"/>
+    <label class="mt-2">Email</label>
+    <input class="form-control" type="text" asp-action="Email"/>
+    <label class="mt-2">Phone</label>    
+    <input class="form-control" type="text" asp-action="Phone"/>
+
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</form>
+
+
 
 @using (Html.BeginForm())
 {
@@ -15,7 +31,7 @@
     
     <div>
         
-        <h4></h4>
+        <h4>Create a customer</h4>
         
         @Html.ValidationSummary(true)
         @* @Html.HiddenFor(model => model.Id) *@
