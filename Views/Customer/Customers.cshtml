@@ -1,13 +1,13 @@
+@using WebApplication2.Models
+
 @model List<WebApplication2.Models.Customer>
 
 <link href="~/css/UserStyle.css" rel="stylesheet" type="text/css" />
-
 
 @{
     ViewBag.Title = "title";
     Layout = "_UserLayout";
 }
-
 
 <h1 style="margin-bottom: 10px"> Customer Home </h1>
 
@@ -28,22 +28,27 @@
                 {
                     <tr>
                         <td>
-                            @customer.Id
+                            @Html.DisplayFor(customerList => customer.Id)
                         </td>
                         <td>
-                            @customer.FistName
+                            @Html.DisplayFor(customerList => customer.FistName)
                         </td>
                         <td>
-                            @customer.LastName
+                            @Html.DisplayFor(customerList => customer.LastName)
                         </td>
                         <td>
-                            @customer.Email
+                            @Html.DisplayFor(customerList => customer.Email) 
                         </td>
                         <td>
-                            @customer.Phone
+                            @Html.DisplayFor(customerList => customer.Phone)
                         </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@customer.Id">Edit</a>
+                        </td>
+                        @* <td> *@
+                        @*     <a asp-action="Details" asp-route-id="@customer.Id">Details</a> *@
+                        @* </td> *@
+                        <td>
                             <a asp-action="Delete" asp-route-id="@customer.Id">Delete</a>
                         </td>
                     </tr>    
@@ -52,3 +57,4 @@
         </tbody>
     </table>
 </div>
+

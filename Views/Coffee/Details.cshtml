@@ -2,65 +2,63 @@
 
 @model IEnumerable<WebApplication2.Models.Coffee>
 
+<link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
+
 @{
     ViewBag.Title = "title";
     Layout = "_CoffeeLayout";
 }
-
-<link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
 <h1 style="margin-bottom: 10px"> Coffee Home </h1>
 
 <div>
     <table class="detailTable">
         <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Temp</th>
-            <th>Description</th>
-            <th>Price</th>
-        @* </tr> *@
-        @* <tr> *@
-            <th>Edit</th>
-            <th>Details</th>
-            <th>Delete</th>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Temp</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Details</th>
+                <th>Delete</th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Temp)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id })
-                </td>
-                <td>
-                    @Html.ActionLink("Details", "Details", new { id=item.Id })
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-                </td>
-            </tr>
-        }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Temp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

@@ -5,6 +5,14 @@ namespace WebApplication2.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Coffee> Coffees { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        
+        public ApplicationDbContext()
+        {
+        }
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -13,29 +21,10 @@ namespace WebApplication2.Data
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // connection string should be stored in another file
             optionsBuilder.UseNpgsql(
                 "Host=localhost;Database=postgres;Username=postgres;Password=postgres"
             );
-        }
-        
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Coffee> Coffees { get; set; }
-        public DbSet<Sale> Sales { get; set; }
-
-        public ApplicationDbContext()
-        {
-        }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Sale>()
-                .HasOne(s => s.Customer)
-                .WithMany(c => c.Sales)
-                .HasForeignKey(s => s.CustomerId);
-
-            modelBuilder.Entity<Sale>()
-                .HasOne(s => s.Coffee)
-                .WithMany(c => c.Sales)
-                .HasForeignKey(s => s.CoffeeId);
         }
     }
 }
