@@ -25,51 +25,21 @@ namespace WebApplication2.Controllers
             return RedirectToAction("Customers");
         }
         
-        // // POST: CustomerController/Create
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public async Task<IActionResult> Create([Bind("Id, FistName, LastName, Email, Phone")] Customer customerInput)
-        // {
-        //     if (ModelState.IsValid)
-        //     {
-        //         _context.Add(customerInput);
-        //         await _context.SaveChangesAsync();
-        //         return RedirectToAction("CustomerHub");
-        //     }
-        //
-        //     // Return the view with validation errors if any
-        //     return View(customerInput);
-        // }
-        
-        // MUST delete form Customer view -> always has an ID
         public IActionResult Delete(int id)
         {
-            
             var customerId =  _context.Customers.SingleOrDefault(x => x.Id == id);
-
+            
+            // if customer ID does not exist, send pop up saying does not exist
+            if (customerId == null)
+            {
+                return NotFound();
+            }
+            
             _context.Customers.Remove(customerId);
             _context.SaveChangesAsync();
 
             return RedirectToAction("Customers");
         }
-
-        // [HttpPost]
-        // [ValidateAntiForgeryToken]
-        // public async Task<IActionResult> Edit(int? id, Customer customerInput)
-        // {
-        //     if (id != customerInput.Id || id.HasValue)
-        //     {
-        //         return NotFound();
-        //     }
-        //
-        //     if (ModelState.IsValid)
-        //     {
-        //         _context.Update(customerInput);
-        //         await _context.SaveChangesAsync();
-        //         return RedirectToAction("Customers");
-        //     }
-        //     return View(customerInput);
-        // }
 
         public IActionResult Edit(Customer model)
         {

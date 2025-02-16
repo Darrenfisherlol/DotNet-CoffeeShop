@@ -25,101 +25,47 @@ namespace WebApplication2.Controllers
             return View(_context.Coffees.ToList());
         }
         
-        public ActionResult Create()
+        public ActionResult Customers()
+        {
+            return View(_context.Customers.ToList());
+        }
+        
+        public IActionResult Create()
         {
             return View();
         }
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, Name, Category, Temp, Description, Price")] Coffee coffeeInput)
+
+        public async Task<IActionResult> CreateCustomerForm(Customer model)
         {
-
-            using (var context = new ApplicationDbContext())
-            {
-                var cof = await context.Coffees.FindAsync(coffeeInput.Id);
-                if (coffeeInput.Id == 0 || cof is not null)
-                {
-                    return View();
-                }
-            }
-            
-            if (ModelState.IsValid)
-            {
-                _context.Add(coffeeInput);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details));
-            }
-
-            return View(coffeeInput);
+            _context.Customers.Add(model);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Customers");
         }
         
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int id)
         {
-            if (id == null)
+            var customerId =  _context.Customers.SingleOrDefault(x => x.Id == id);
+            
+            // if customer ID does not exist, send pop up saying does not exist
+            if (customerId == null)
             {
                 return NotFound();
             }
-
-            var coffee = await _context.Coffees.FindAsync(id);
             
-            if (coffee == null)
-            {
-                return NotFound();
-            }
+            _context.Customers.Remove(customerId);
+            _context.SaveChangesAsync();
 
-            return View(coffee);
+            return RedirectToAction("Customers");
         }
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult Edit(Customer model)
         {
-            var coffee = await _context.Coffees.FindAsync(id);
         
-            if (coffee != null)
-            {
-                _context.Coffees.Remove(coffee);
-                await _context.SaveChangesAsync();
-            }
-        
-            return RedirectToAction(nameof(Details));
-        }
-        
-        public async Task<IActionResult>  Edit(int? Id)
-        {
-            Coffee coffee = null;
-
-            if (Id != null)
-            {
-                coffee = await _context.Coffees.FindAsync(Id);
-                
-                if (coffee == null)
-                {
-                    TempData["ErrorMessage"] = "The specified ID does not exist.";
-                    return RedirectToAction(nameof(Edit));
-                }
-            }
+            _context.Customers.Update(model);
             
-            return View(coffee);   
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, Coffee coffeeInput)
-        {
-            if (id != coffeeInput.Id || id.HasValue)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                _context.Update(coffeeInput);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details));
-            }
-            return View(coffeeInput);
+            _context.SaveChanges();
+            
+            return RedirectToAction("Customers");
         }
     }
 }
