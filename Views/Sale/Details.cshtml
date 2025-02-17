@@ -1,44 +1,24 @@
+@model WebApplication2.Models.Sale
 
-@model IEnumerable<WebApplication2.Models.Sale>
 
 @{
     ViewBag.Title = "title";
-    Layout = "_CoffeeLayout";
+    Layout = "_Layout";
 }
 
-<link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
-
-<h1 style="margin-bottom: 10px"> Sale Home </h1>
+<h1> Customer Detail Page </h1>
 
 <div>
-    <table class="detailTable">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>UserId</th>
-                <th>CoffeeId</th>
-                <th>Quantity</th>
-                <th>OrderDateTime</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var data in Model)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => data.Id)</td>
-                    <td>@Html.DisplayFor(modelItem => data.CustomerId)</td>
-                    @* <td>@Html.DisplayFor(modelItem => data.CoffeeId)</td> *@
-                    <td>@Html.DisplayFor(modelItem => data.Quantity)</td>
-                    <td>@Html.DisplayFor(modelItem => data.OrderDateTime)</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
+    <h4> @Model.Id</h4>
 
-<div>
-    end
-</div>
+    <div>
+        <span>Details:</span>
+        <ul>@Model.Id</ul>
+        <ul>@Model.Quantity </ul>
+        <ul>@Model.OrderDetails </ul>
+        <ul>@Model.OrderDateTime </ul>
+    </div>
 
+</div>
 
 

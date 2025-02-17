@@ -9,7 +9,6 @@ namespace WebApplication2.Controllers
 {
     public class AboutUsController : Controller
     {
-        // GET: Coffee/Index
         public ActionResult AboutUsHub()
         {
             return View();

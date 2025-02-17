@@ -13,7 +13,7 @@
 
 
 <div>
-   
+
     @if (Model == null)
     {
         <form asp-action="Edit" method="get">
@@ -24,7 +24,7 @@
             </div>
             <button type="submit" class="btn btn-primary"> Find Coffee Id </button>
         </form>
-        
+
         @if (TempData["ErrorMessage"] != null)
         {
             <div >

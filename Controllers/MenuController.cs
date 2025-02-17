@@ -9,14 +9,11 @@ namespace WebApplication2.Controllers
 {
     public class MenuController : Controller
     {
-        private ApplicationDbContext _context = new ApplicationDbContext();
-
-        // GET: Menu/MenuHub
-        public ActionResult MenuHub()
+        private ApplicationDbContext _context = new ApplicationDbContext(); 
+        
+        public ActionResult Index()
         {
             return View();
         }
-
-       
     }
 }

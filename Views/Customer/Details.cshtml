@@ -1,37 +1,23 @@
+@model WebApplication2.Models.Customer
 
-@model IEnumerable<WebApplication2.Models.Customer>
 
 @{
     ViewBag.Title = "title";
-    Layout = "_CoffeeLayout";
+    Layout = "_Layout";
 }
 
-
-<h2>Customer detail</h2>
+<h1> Customer Detail Page </h1>
 
 <div>
-    <table class="detailTable">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Temp</th>
-            <th>Description</th>
-            <th>Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var data in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => data.Id)</td>
-                <td>@Html.DisplayFor(modelItem => data.FistName)</td>
-                <td>@Html.DisplayFor(modelItem => data.LastName)</td>
-                <td>@Html.DisplayFor(modelItem => data.Email)</td>
-                <td>@Html.DisplayFor(modelItem => data.Phone)</td>
-            </tr>
-        }
-        </tbody>
-    </table>
+    <h4> @Model.FistName @Model.LastName</h4>
+
+    <div>
+        <span>Details:</span>
+        <ul>@Model.Id </ul>
+        <ul>@Model.Email </ul>
+        <ul>@Model.Phone </ul>
+    </div>
+
 </div>
+
+
