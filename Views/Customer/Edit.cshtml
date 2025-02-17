@@ -1,5 +1,4 @@
 @model WebApplication2.Models.Customer
-@* @Model WebApplication2.Models.Customer *@
 
 @{
     ViewBag.Title = "title";
@@ -16,7 +15,7 @@
    
     @if (Model == null)
     {
-        <form asp-action="Edit" method="get">
+        <form asp-action="EditCustomer" method="get">
 
             <div class="form-group">
                 <label asp-for="Id">Enter Customer Id:</label>

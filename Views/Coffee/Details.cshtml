@@ -1,101 +1,36 @@
-@using WebApplication2.Models
-
-@model IEnumerable<WebApplication2.Models.Coffee>
-
-<link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
+@model WebApplication2.Models.Coffee
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Coffee Details viewbag title";
     Layout = "_CoffeeLayout";
 }
+
+<link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
 <h1 style="margin-bottom: 10px"> Coffee Home </h1>
 
 <div>
-    <table class="detailTable">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Temp</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Edit</th>
-                <th>Details</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Category)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Temp)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                    </td>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                    </td>
-                    <td>
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="w-100">
+        <span> img of coffee</span>
+        <div>
+            <h5>@Model.Name</h5>
+            <span> - @Model.Description</span>
+            <span> - @Model.Category</span>
+            <span> - @Model.Temp</span>
+            <span> - @Model.Price</span>
+        </div>
+    </div>
+
+    <div>
+         
+    </div>
+
+    <div>
+    </div>
+
 </div>
 
 
-
-<div>
-    <table class="detailTable">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Temp</th>
-                <th>Description</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var data in Model)
-            {
-                <tr>
-                    <td>@data.Id</td>
-                    <td>@data.Name</td>
-                    <td>@data.Category</td>
-                    <td>@data.Description</td>
-                    <td>@data.Temp</td>
-                    <td>@data.Price</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
-<div>
-    end
-</div>
-
-
-
+<footer>
+    footer
+</footer>

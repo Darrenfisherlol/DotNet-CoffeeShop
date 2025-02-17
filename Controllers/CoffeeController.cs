@@ -1,13 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Razor;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WebApplication2.Data;
 using WebApplication2.Models;
-using System.Linq;
-using System.Collections.Generic;
-
-
 
 namespace WebApplication2.Controllers
 {
@@ -15,57 +8,94 @@ namespace WebApplication2.Controllers
     {
         private ApplicationDbContext _context = new ApplicationDbContext();
         
-        public ActionResult CoffeeHub()
-        {
-            return View();
-        }
-
-        public ActionResult Details()
+        // CRUD
+        
+        // get request to show index page
+        public ActionResult Index()
         {
             return View(_context.Coffees.ToList());
         }
         
-        public ActionResult Customers()
-        {
-            return View(_context.Customers.ToList());
-        }
-        
-        public IActionResult Create()
+        // get request to show create page
+        public async Task<ActionResult> Create()
         {
             return View();
         }
-
-        public async Task<IActionResult> CreateCustomerForm(Customer model)
+        
+        // post request to push new coffee to db 
+        public async Task<IActionResult> CreateCoffee(Coffee coffee)
         {
-            _context.Customers.Add(model);
+            _context.Coffees.Add(coffee);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Customers");
+
+            return View("Index");
         }
         
-        public IActionResult Delete(int id)
+        // get request to get coffee detail
+        public async Task<ActionResult> Detail(int? id)
         {
-            var customerId =  _context.Customers.SingleOrDefault(x => x.Id == id);
-            
-            // if customer ID does not exist, send pop up saying does not exist
-            if (customerId == null)
+            var coffee = await _context.Coffees.FindAsync(id);
+
+            if (coffee == null)
             {
                 return NotFound();
             }
             
-            _context.Customers.Remove(customerId);
-            _context.SaveChangesAsync();
-
-            return RedirectToAction("Customers");
+            return View(coffee);
         }
-
-        public IActionResult Edit(Customer model)
-        {
         
-            _context.Customers.Update(model);
+        // get request to retrieve data to edit page
+        public async Task<ActionResult> Edit(int? id)
+        {
+            var coffee = await _context.Coffees.FindAsync(id);
+
+            if (coffee == null)
+            {
+                return NotFound();
+            }
             
-            _context.SaveChanges();
-            
-            return RedirectToAction("Customers");
+            return View(coffee);
         }
+
+        public async Task<ActionResult> EditCoffee(Coffee coffee)
+        {
+            _context.Update(coffee);
+            await _context.SaveChangesAsync();
+            
+            return RedirectToAction("Index");
+        }
+        
+        // get request to populate delete page
+        public async Task<ActionResult> Delete(int? id)
+        {
+            var coffee = await _context.Coffees.FindAsync(id);
+            
+            if (coffee == null)
+            {
+                return NotFound();
+            }
+            
+            return View(coffee);
+        }
+        
+        // post request to edit db to remove coffee
+        public async Task<IActionResult> DeleteConfirm(int id)
+        {
+            var coffee =  await _context.Coffees.FindAsync(id);
+            
+            if (coffee == null)
+            {
+                return NotFound();
+            }
+            
+            _context.Coffees.Remove(coffee);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+        
+        //
+        // Other
+        //
     }
 }

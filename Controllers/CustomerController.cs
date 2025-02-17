@@ -8,47 +8,86 @@ namespace WebApplication2.Controllers
     {
         private ApplicationDbContext _context = new ApplicationDbContext();
         
-        public ActionResult Customers()
+        // get request to show index page
+        public IActionResult Index()
         {
             return View(_context.Customers.ToList());
         }
         
+        // get request to show create page
         public IActionResult Create()
         {
             return View();
         }
-
+        
+        // post request to edit data
         public async Task<IActionResult> CreateCustomerForm(Customer model)
         {
             _context.Customers.Add(model);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Customers");
-        }
-        
-        public IActionResult Delete(int id)
-        {
-            var customerId =  _context.Customers.SingleOrDefault(x => x.Id == id);
             
-            // if customer ID does not exist, send pop up saying does not exist
-            if (customerId == null)
+            ViewBag.Message = "Customer created successfully";
+            
+            return RedirectToAction("Index");
+        }
+
+        // get request to showcase customer specific data
+        public async Task<IActionResult> Detail(int? id)
+        {
+            var customer = await _context.Customers.FindAsync(id);
+
+            if (customer == null)
             {
                 return NotFound();
             }
             
-            _context.Customers.Remove(customerId);
-            _context.SaveChangesAsync();
-
-            return RedirectToAction("Customers");
+            return View(customer);
         }
-
-        public IActionResult Edit(Customer model)
-        {
         
+        // get request to showcasce model data
+        public async Task<IActionResult> Edit(int id)
+        {
+            var customer = await _context.Customers.FindAsync(id);
+            
+            return View(customer);
+        }
+        
+        // post request to push changes to db
+        public async Task<IActionResult> EditCustomer(Customer model)
+        {
             _context.Customers.Update(model);
+            await _context.SaveChangesAsync();
             
-            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        
+        // get request to get to the delete page with model filled in
+        public async Task<IActionResult> Delete(int id)
+        {
+            var customer = await _context.Customers.FindAsync(id);
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
             
-            return RedirectToAction("Customers");
+            return View(customer);
+        }
+        
+        // post request to push changes to db
+        public async Task<IActionResult> DeleteConfirm(int id)
+        {
+            var customer =  await _context.Customers.FindAsync(id);
+            
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            
+            _context.Customers.Remove(customer);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
         }
     }
 }

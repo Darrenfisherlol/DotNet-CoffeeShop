@@ -7,105 +7,87 @@ namespace WebApplication2.Controllers
     public class SaleController : Controller
     {
         private ApplicationDbContext _context = new ApplicationDbContext();
-
         
-        // GET: Sale/CustomerHub
-        public ActionResult CustomerHub()
-        {
-            return View();
-        }
-
-        // GET: Sale/Details
-        public ActionResult Details()
+        // get request to show index page
+        public IActionResult Index()
         {
             return View(_context.Sales.ToList());
         }
-
-        // GET: Sale/Create
-        public ActionResult Create()
+        
+        // get request to show create page
+        public IActionResult Create()
         {
             return View();
-        }
-
-        // POST: Sale/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, UserId, CoffeeId, Quantity, OrderDateTime")] Sale saleInput)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(saleInput);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details));
-            }
-
-            // Return the view with validation errors if any
-            return View(saleInput);
-        }
-
-        // GET: Sale/Edit
-        public ActionResult Delete()
-        {
-            return View();
-        }
-
-        // POST: Sale/Delete
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var saleId = await _context.Sales.FindAsync(id);
-
-            if (saleId == null)
-            {
-                TempData["ErrorMessage"] = "The specified ID does not exist.";
-                return RedirectToAction(nameof(Delete));
-            }
-
-            _context.Sales.Remove(saleId);
-            await _context.SaveChangesAsync();
-            
-            
-            return RedirectToAction(nameof(Details));
-        }
-        //GET: Sale/Edit
-        public async Task<IActionResult>  Edit(int? Id)
-        {
-            Sale sale = null;
-
-            if (Id != null)
-            {
-                sale = await _context.Sales.FindAsync(Id);
-                
-                if (sale == null)
-                {
-                    TempData["ErrorMessage"] = "The specified ID does not exist.";
-                    return RedirectToAction(nameof(Edit));
-                }
-            }
-            
-            
-            return View(sale);   
         }
         
-        // POST: Sale/Edit
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, Sale saleInput)
+        // post request to edit data
+        public async Task<IActionResult> CreateSaleForm(Sale model)
         {
-            if (id != saleInput.Id || id.HasValue)
+            _context.Sales.Add(model);
+            await _context.SaveChangesAsync();
+            
+            ViewBag.Message = "Sale created successfully";
+            
+            return RedirectToAction("Index");
+        }
+
+        // get request to showcase Sale specific data
+        public async Task<IActionResult> Detail(int? id)
+        {
+            var sale = await _context.Sales.FindAsync(id);
+
+            if (sale == null)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
-            {
-                _context.Update(saleInput);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details));
-            }
-            return View(saleInput);
+            
+            return View(sale);
         }
-    
+        
+        // get request to showcasce model data
+        public async Task<IActionResult> Edit(int id)
+        {
+            var sale = await _context.Sales.FindAsync(id);
+            
+            return View(sale);
+        }
+        
+        // post request to push changes to db
+        public async Task<IActionResult> EditCustomer(Sale model)
+        {
+            _context.Sales.Update(model);
+            await _context.SaveChangesAsync();
+            
+            return RedirectToAction("Index");
+        }
+        
+        // get request to get to the delete page with model filled in
+        public async Task<IActionResult> Delete(int id)
+        {
+            var sale = await _context.Sales.FindAsync(id);
+
+            if (sale == null)
+            {
+                return NotFound();
+            }
+            
+            return View(sale);
+        }
+        
+        // post request to push changes to db
+        public async Task<IActionResult> DeleteConfirm(int id)
+        {
+            var sale =  await _context.Sales.FindAsync(id);
+            
+            if (sale == null)
+            {
+                return NotFound();
+            }
+            
+            _context.Sales.Remove(sale);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
     }
 }
