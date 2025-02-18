@@ -24,17 +24,10 @@
             </div>
             <button type="submit" class="btn btn-primary"> Find Coffee Id </button>
         </form>
-
-        @if (TempData["ErrorMessage"] != null)
-        {
-            <div >
-                @TempData["ErrorMessage"]
-            </div>
-        }
     }
     else
     {
-        <form asp-action="Edit" method="post">
+        <form asp-action="EditCoffee" method="post">
             <input type="hidden" asp-for="Id"/>
 
             <div class="form-group">

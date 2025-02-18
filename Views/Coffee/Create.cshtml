@@ -10,7 +10,7 @@
 
 <h1 style="margin-bottom: 10px"> Add Types of Coffee</h1>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CreateCoffeeForm", "Coffee", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

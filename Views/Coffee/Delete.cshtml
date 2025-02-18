@@ -7,30 +7,30 @@
     Layout = "_CoffeeLayout";
 }
 
-@using (Html.BeginForm())
+
+<form asp-action="DeleteConfirm" asp-controller="Coffee" method="post">
+    <div class="form-group">
+        <label asp-for="Id">Id:</label>
+        <input type="number" name="Id" placeholder="@Model.Id" class="form-control" required="required" disabled="disabled"/>
+    </div>
+    <button type="submit" class="btn btn-primary"> Find Coffee Id </button>
+</form>
+
+@using (Html.BeginForm("DeleteConfirm", "Coffee", FormMethod.Post))
 {
-
     @Html.AntiForgeryToken()
-
     <div>
-
+        
         <h3>Delete Coffee</h3>
 
         <div>
             <h4>Are you sure?</h4>
-
-            @if (TempData["ErrorMessage"] != null)
-            {
-                <div >
-                    @TempData["ErrorMessage"]
-                </div>
-            }
         </div>
         <div>
             @Html.ValidationSummary(true)
             <div class="form-group">
                 @Html.LabelFor(model => model.Id)
-                @Html.EditorFor(model => model.Id)
+                @* @Html.EditorFor(model => model.Id) *@
                 @Html.ValidationMessageFor(model => model.Id)
             </div>
         </div>

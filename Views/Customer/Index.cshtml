@@ -1,12 +1,10 @@
-@using WebApplication2.Models
-
-@model List<WebApplication2.Models.Customer>
+@model IEnumerable<WebApplication2.Models.Customer>
 
 <link href="~/css/UserStyle.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "title";
-    Layout = "_UserLayout";
+    Layout = "_CoffeeLayout";
 }
 
 <h1 style="margin-bottom: 10px"> Customer Home </h1>
@@ -20,6 +18,7 @@
                 <th>lastName</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>

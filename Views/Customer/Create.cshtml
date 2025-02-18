@@ -2,12 +2,12 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "_Layout";
+    Layout = "_CoffeeLayout";
 }
 
 <h2>create</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CreateCustomerForm", "Customer", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     

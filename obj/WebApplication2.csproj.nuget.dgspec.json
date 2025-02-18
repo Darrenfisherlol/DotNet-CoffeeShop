@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\WebApplication2.csproj": {}
+    "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\WebApplication2.csproj": {}
   },
   "projects": {
-    "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\WebApplication2.csproj": {
+    "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\WebApplication2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\WebApplication2.csproj",
+        "projectUniqueName": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\WebApplication2.csproj",
         "projectName": "WebApplication2",
-        "projectPath": "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\WebApplication2.csproj",
+        "projectPath": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\WebApplication2.csproj",
         "packagesPath": "C:\\Users\\darre\\.nuget\\packages\\",
-        "outputPath": "I:\\Coding\\Projects\\CoffeeDev\\CofeDevMAIN\\DotNet-CoffeeShop\\obj\\",
+        "outputPath": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

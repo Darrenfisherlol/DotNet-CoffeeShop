@@ -11,24 +11,24 @@ namespace WebApplication2.Controllers
         // CRUD
         
         // get request to show index page
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View(_context.Coffees.ToList());
         }
         
         // get request to show create page
-        public async Task<ActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
         
         // post request to push new coffee to db 
-        public async Task<IActionResult> CreateCoffee(Coffee coffee)
+        public async Task<IActionResult> CreateCoffeeForm(Coffee coffee)
         {
             _context.Coffees.Add(coffee);
             await _context.SaveChangesAsync();
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
         
         // get request to get coffee detail

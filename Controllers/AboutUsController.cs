@@ -9,7 +9,7 @@ namespace WebApplication2.Controllers
 {
     public class AboutUsController : Controller
     {
-        public ActionResult AboutUsHub()
+        public ActionResult Index()
         {
             return View();
         }

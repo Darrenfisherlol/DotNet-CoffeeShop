@@ -49,11 +49,16 @@ namespace WebApplication2.Controllers
         {
             var sale = await _context.Sales.FindAsync(id);
             
+            if (sale == null)
+            {
+                return NotFound();
+            }
+            
             return View(sale);
         }
         
         // post request to push changes to db
-        public async Task<IActionResult> EditCustomer(Sale model)
+        public async Task<IActionResult> EditSale(Sale model)
         {
             _context.Sales.Update(model);
             await _context.SaveChangesAsync();
