@@ -23,6 +23,8 @@ namespace WebApplication2.Controllers
         // post request to edit data
         public async Task<IActionResult> CreateSaleForm(Sale model)
         {
+            
+            model.OrderDateTime = model.OrderDateTime.ToUniversalTime();
             _context.Sales.Add(model);
             await _context.SaveChangesAsync();
             
