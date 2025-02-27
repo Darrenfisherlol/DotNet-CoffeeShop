@@ -8,8 +8,6 @@ namespace WebApplication2.Controllers
     {
         private ApplicationDbContext _context = new ApplicationDbContext();
         
-        // CRUD
-        
         // get request to show index page
         public IActionResult Index()
         {
@@ -27,6 +25,8 @@ namespace WebApplication2.Controllers
         {
             _context.Coffees.Add(coffee);
             await _context.SaveChangesAsync();
+
+            ViewBag.Message = "Coffee created successfully";
 
             return RedirectToAction("Index");
         }
@@ -56,10 +56,11 @@ namespace WebApplication2.Controllers
             
             return View(coffee);
         }
-
+        
+        // post request to push changes to db
         public async Task<ActionResult> EditCoffee(Coffee coffee)
         {
-            _context.Update(coffee);
+            _context.Coffees.Update(coffee);
             await _context.SaveChangesAsync();
             
             return RedirectToAction("Index");
@@ -93,9 +94,5 @@ namespace WebApplication2.Controllers
 
             return RedirectToAction("Index");
         }
-        
-        //
-        // Other
-        //
     }
 }

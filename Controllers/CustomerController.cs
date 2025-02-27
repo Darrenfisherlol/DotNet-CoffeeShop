@@ -49,6 +49,11 @@ namespace WebApplication2.Controllers
         {
             var customer = await _context.Customers.FindAsync(id);
             
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            
             return View(customer);
         }
         
