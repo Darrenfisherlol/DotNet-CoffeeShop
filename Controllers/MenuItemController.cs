@@ -7,13 +7,14 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
-    public class MenuController : Controller
+    public class MenuItemController : Controller
     {
         private ApplicationDbContext _context = new ApplicationDbContext(); 
         
-        public ActionResult Index()
+        // get request to show index page
+        public IActionResult Index()
         {
-            return View();
+            return View(_context.MenuItems.ToList());
         }
     }
 }

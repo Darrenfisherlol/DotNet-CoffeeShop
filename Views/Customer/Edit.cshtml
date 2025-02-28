@@ -18,7 +18,7 @@
         <form asp-action="EditCustomer" method="get">
 
             <div class="form-group">
-                <label asp-for="Id">Enter Customer Id:</label>
+                <label asp-for="CustomerId">Enter Customer Id:</label>
                 <input type="number" name="Id" class="form-control" required="required"/>
             </div>
             <button type="submit" class="btn btn-primary"> Find Customer Id </button>
@@ -34,7 +34,7 @@
     else
     {
         <form asp-action="Edit" method="post">
-            <input type="hidden" asp-for="Id"/>
+            <input type="hidden" asp-for="CustomerId"/>
 
             <div class="form-group">
                 <label asp-for="FistName"></label>

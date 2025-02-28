@@ -5,11 +5,12 @@ namespace WebApplication2.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<Coffee> Coffees { get; set; }
-        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-        
+        public DbSet<Order> Orders { get; set; }
+
         public ApplicationDbContext()
         {
         }

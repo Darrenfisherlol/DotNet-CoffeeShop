@@ -19,37 +19,30 @@
         <form asp-action="Edit" method="get">
 
             <div class="form-group">
-                <label asp-for="Id">Enter Coffee Id:</label>
-                <input type="number" name="Id" class="form-control" required="required"/>
+                <label asp-for="CoffeeId">Enter Coffee CoffeeId:</label>
+                <input type="number" name="CoffeeId" class="form-control" required="required"/>
             </div>
-            <button type="submit" class="btn btn-primary"> Find Coffee Id </button>
+            <button type="submit" class="btn btn-primary"> Find Coffee CoffeeId </button>
         </form>
     }
     else
     {
         <form asp-action="EditCoffee" method="post">
-            <input type="hidden" asp-for="Id"/>
+            <input type="hCoffeeIdden" asp-for="CoffeeId"/>
 
             <div class="form-group">
                 <label asp-for="Name"></label>
                 <input asp-for="Name" class="form-control"/>
             </div>
             <div class="form-group">
-                <label asp-for="Category"></label>
-                <input asp-for="Category" class="form-control"/>
-            </div>
-            <div class="form-group">
-                <label asp-for="Temp"></label>
-                <input asp-for="Temp" class="form-control"/>
-            </div>
-            <div class="form-group">
                 <label asp-for="Description"></label>
                 <input asp-for="Description" class="form-control"/>
             </div>
             <div class="form-group">
-                <label asp-for="Price"></label>
-                <input asp-for="Price" class="form-control"/>
+                <label asp-for="RoastType"></label>
+                <input asp-for="RoastType" class="form-control"/>
             </div>
+      
             <button type="submit" class="btn btn-primary"> Save Changes </button>
         </form>
     }

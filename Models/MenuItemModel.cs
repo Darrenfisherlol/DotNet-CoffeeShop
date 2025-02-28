@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication2.Models
 {
-    public class Coffee
+    public class MenuItem
     {
-        
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CoffeeId { get; set; }
+        public int MenuItemId { get; set; }
         
         [Required]
         [StringLength(100)]
@@ -16,17 +16,26 @@ namespace WebApplication2.Models
         [Required]
         [StringLength(100)]
         public string Description { get; set; }
- 
+        
         [Required]
         [StringLength(100)]
-        public string RoastType { get; set; }
+        public string Type { get; set; }
         
-        public Coffee (int id, string name, string description, string roast)
+        [Required]
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal Price { get; set; }
+
+        public MenuItem()
         {
-            this.CoffeeId = id;
+        }
+        
+        public MenuItem (int id, string name, string description, string type, decimal price)
+        {
+            this.MenuItemId = id;
             this.Name = name;
             this.Description = description;
-            this.RoastType = roast;
+            this.Type = type;
+            this.Price = price;
         }
     }
 }

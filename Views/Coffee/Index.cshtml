@@ -29,27 +29,22 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(coffeeList => coffee.Id)
+                            @Html.DisplayFor(coffeeList => coffee.CoffeeId)
                         </td>
                         <td>
                             @Html.DisplayFor(coffeeList => coffee.Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(coffeeList => coffee.Category)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(coffeeList => coffee.Temp) 
-                        </td>
-                        <td>
                             @Html.DisplayFor(coffeeList => coffee.Description)
                         </td>
                         <td>
-                            @Html.DisplayFor(coffeeList => coffee.Price)
+                            @Html.DisplayFor(coffeeList => coffee.RoastType) 
                         </td>
+                 
                         <td>
-                            <a asp-action="Edit" asp-route-id="@coffee.Id">Edit</a>
+                            <a asp-action="Edit" asp-route-id="@coffee.CoffeeId">Edit</a>
                             @* <a asp-action="Details" asp-route-id="@customer.Id">Details</a> *@
-                            <a asp-action="Delete" asp-route-id="@coffee.Id">Delete</a>
+                            <a asp-action="Delete" asp-route-id="@coffee.CoffeeId">Delete</a>
                         </td>
                     </tr>    
                 }
