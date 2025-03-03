@@ -10,11 +10,11 @@
 @using (Html.BeginForm("CreateCustomerForm", "Customer", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
+
     <div>
-        
+
         <h4>Create a customer</h4>
-        
+
         @Html.ValidationSummary(true)
         @* @Html.HiddenFor(model => model.Id) *@
         <div class="form-group">
@@ -22,7 +22,7 @@
             @Html.EditorFor(model => model.CustomerId)
             @Html.ValidationMessageFor(model => model.CustomerId)
         </div>
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.FistName)
             @Html.EditorFor(model => model.FistName)
@@ -43,8 +43,13 @@
             @Html.EditorFor(model => model.Phone)
             @Html.ValidationMessageFor(model => model.Phone)
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.JoinDate)
+            @Html.EditorFor(model => model.JoinDate)
+            @Html.ValidationMessageFor(model => model.JoinDate)
+        </div>
         <button type="submit" class="btn btn-primary">Save</button>
-        
+
     </div>
 }
 

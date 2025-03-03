@@ -28,10 +28,6 @@ namespace WebApplication2.Models
         [DataType(DataType.DateTime)]
         public DateTime JoinDate { get; set; } = DateTime.Now;
         
-        public Customer()
-        {
-        }
-        
         public Customer(int id, string fistName, string lastName, string email, string phoneNumber, DateTime joinDate)
         {
             this.CustomerId = id;

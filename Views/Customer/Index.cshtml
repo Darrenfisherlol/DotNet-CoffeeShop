@@ -12,44 +12,47 @@
 <div>
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>FirstName</th>
-                <th>lastName</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>lastName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Join Date</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-            @{
-                foreach (var customer in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(customerList => customer.CustomerId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(customerList => customer.FistName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(customerList => customer.LastName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(customerList => customer.Email) 
-                        </td>
-                        <td>
-                            @Html.DisplayFor(customerList => customer.Phone)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@customer.CustomerId">Edit</a>
-                            @* <a asp-action="Details" asp-route-id="@customer.Id">Details</a> *@
-                            <a asp-action="Delete" asp-route-id="@customer.CustomerId">Delete</a>
-                        </td>
-                    </tr>    
-                }
+        @{
+            foreach (var customer in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(customerList => customer.CustomerId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(customerList => customer.FistName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(customerList => customer.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(customerList => customer.Email) 
+                    </td>
+                    <td>
+                        @Html.DisplayFor(customerList => customer.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(customerList => customer.JoinDate)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@customer.CustomerId">Edit</a>
+                        @* <a asp-action="Details" asp-route-id="@customer.Id">Details</a> *@
+                        <a asp-action="Delete" asp-route-id="@customer.CustomerId">Delete</a>
+                    </td>
+                </tr>    
             }
+        }
         </tbody>
     </table>
 </div>
-

@@ -1,7 +1,7 @@
+```csharp
 @model List<WebApplication2.Models.Coffee>
 
 <link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
-
 
 @{
     ViewBag.Title = "title";
@@ -13,24 +13,24 @@
         Analytics and Backend
     </h1>
     <p>
-        What is this page? 
-        <ul>
-            <li>
-                Showcase some data analytics
-            </li>
-            <li>
-                 Showcase what is happening on the "backend" of this website as it navigates through the different model, views, & controllers
-            </li>
-            <li>
-                 Showcase code stack: Html, CSS, .Net, postgres, docker, git,
-            </li>
-        </ul>
+        What is this page?
+    <ul>
+        <li>
+            Showcase some data analytics
+        </li>
+        <li>
+            Showcase what is happening on the "backend" of this website as it navigates through the different model, views, & controllers
+        </li>
+        <li>
+            Showcase code stack: Html, CSS, .Net, postgres, docker, git,
+        </li>
+    </ul>
 
     </p>
     <p>
         Below we xyz...
     </p>
-    
+
 </div>
 
 <div>
@@ -38,6 +38,14 @@
     <div>
         <a asp-controller="Coffee" asp-action="Index"> Index </a>
         <a asp-controller="Coffee" asp-action="Create"> Create </a>
+    </div>
+</div>
+
+<div>
+    <h4>Menu Item Data: </h4>
+    <div>
+        <a asp-controller="MenuItem" asp-action="Index"> Index </a>
+        <a asp-controller="MenuItem" asp-action="Create"> Create </a>
     </div>
 </div>
 
@@ -56,11 +64,13 @@
         <a asp-controller="Order" asp-action="Create"> Create </a>
     </div>
 </div>
+
 <div>
-    <h4>Sale Data: </h4>
+    <h4>Order Detail Data: </h4>
     <div>
-        <a asp-controller="Sale" asp-action="Index"> Index </a>
-        <a asp-controller="Sale" asp-action="Create"> Create </a>
+        <a asp-controller="OrderDetail" asp-action="Index"> Index </a>
+        <a asp-controller="OrderDetail" asp-action="Create"> Create </a>
     </div>
 </div>
 
+```

@@ -24,10 +24,6 @@ namespace WebApplication2.Models
         [Required]
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
-
-        public MenuItem()
-        {
-        }
         
         public MenuItem (int id, string name, string description, string type, decimal price)
         {

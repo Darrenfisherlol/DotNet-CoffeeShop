@@ -1,5 +1,5 @@
 @model IEnumerable<WebApplication2.Models.Order>
-    
+
 
 @{
     ViewBag.Title = "title";
@@ -21,28 +21,28 @@
         </thead>
         <tbody>
         @{
-            foreach (var OrderDetail in Model)
+            foreach (var order in Model)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(orderDetailList => OrderDetail.Id)
+                        @Html.DisplayFor(orderList => order.OrderId)
                     </td>
                     <td>
-                        @Html.DisplayFor(orderDetailList => OrderDetail.SaleId)
+                        @Html.DisplayFor(orderList => order.CustomerId)
                     </td>
                     <td>
-                        @Html.DisplayFor(orderDetailList => OrderDetail.CoffeeId)
+                        @Html.DisplayFor(orderList => order.OrderDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(orderDetailList => OrderDetail.Quantity)
+                        @Html.DisplayFor(orderList => order.Price)
                     </td>
                     @* <td> *@
                     @*     @Html.DisplayFor(saleList => sales.OrderDetails) *@
                     @* </td> *@
                     <td>
-                        <a asp-action="Edit" asp-route-id="@OrderDetail.Id">Edit</a>
+                        <a asp-action="Edit" asp-route-id="@order.OrderId">Edit</a>
                         @* <a asp-action="Details" asp-route-id="@customer.Id">Details</a> *@
-                        <a asp-action="Delete" asp-route-id="@OrderDetail.Id">Delete</a>
+                        <a asp-action="Delete" asp-route-id="@order.OrderId">Delete</a>
                     </td>
                 </tr>
             }

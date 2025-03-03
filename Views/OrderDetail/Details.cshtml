@@ -1,4 +1,4 @@
-@model WebApplication2.Models.Sale
+@model WebApplication2.Models.OrderDetail
 
 
 @{
@@ -9,14 +9,14 @@
 <h1> Customer Detail Page </h1>
 
 <div>
-    <h4> @Model.Id</h4>
+    <h4> @Model.OrderDetailId</h4>
 
     <div>
         <span>Details:</span>
-        <ul>@Model.Id</ul>
+        <ul>@Model.OrderId</ul>
+        <ul>@Model.MenuItemId </ul>
         <ul>@Model.Quantity </ul>
-        <ul>@Model.OrderDetails </ul>
-        <ul>@Model.OrderDateTime </ul>
+        <ul>@Model.Price </ul>
     </div>
 
 </div>

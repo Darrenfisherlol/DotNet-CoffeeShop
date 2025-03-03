@@ -1,0 +1,53 @@
+@model IEnumerable<WebApplication2.Models.OrderDetail>
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_CoffeeLayout";
+}
+
+
+<h1 style="margin-bottom: 10px"> Order Detail Home </h1>
+
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>OrderDetailID</th>
+            <th>OrderID</th>
+            <th>MenuItemId</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+            foreach (var orderDetail in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(orderList => orderDetail.OrderDetailId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(orderList => orderDetail.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(orderList => orderDetail.MenuItemId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(orderList => orderDetail.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(orderList => orderDetail.Price)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@orderDetail.OrderDetailId">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@orderDetail.OrderDetailId">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

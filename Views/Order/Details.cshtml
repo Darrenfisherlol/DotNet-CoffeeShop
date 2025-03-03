@@ -1,0 +1,23 @@
+@model WebApplication2.Models.Order
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_CoffeeLayout";
+}
+
+<h1> Order Detail Page </h1>
+
+<div>
+    <h4> @Model.OrderId</h4>
+
+    <div>
+        <span>Details:</span>
+        <ul>@Model.CustomerId </ul>
+        <ul>@Model.OrderDate </ul>
+        <ul>@Model.Price </ul>
+    </div>
+
+</div>
+
+

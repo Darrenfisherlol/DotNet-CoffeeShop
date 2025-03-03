@@ -7,7 +7,7 @@ namespace WebApplication2.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int OrderId { get; set; }
         
         [Required]
         [ForeignKey("CustomerId")]
@@ -23,13 +23,9 @@ namespace WebApplication2.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
         
-        public Order()
-        {
-        }
-        
         public Order (int id, int customerId, Customer customer, DateTime orderDate, decimal price)
         {
-            this.Id = id;
+            this.OrderId = id;
             this.CustomerId = customerId;
             this.Customer = customer;
             this.OrderDate = orderDate;

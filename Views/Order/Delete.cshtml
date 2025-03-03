@@ -1,4 +1,4 @@
-@model WebApplication2.Models.Customer
+@model WebApplication2.Models.Order
 
 <link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
@@ -12,11 +12,11 @@
     @Html.AntiForgeryToken()
 
     <div>
-        <h3>Delete Customer</h3>
+        <h3>Delete Order</h3>
 
         <div>
-            <p>Id: @Model.CustomerId</p>
-            @Html.HiddenFor(model => model.CustomerId)
+            <p>Id: @Model.OrderId</p>
+            @Html.HiddenFor(model => model.OrderId)
         </div>
 
         <div>

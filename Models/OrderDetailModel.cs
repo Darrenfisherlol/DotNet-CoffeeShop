@@ -28,11 +28,6 @@ namespace WebApplication2.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
         
-        // ORM Constructor
-        public OrderDetail()
-        {
-        }
-        
         public OrderDetail (int id, int orderId, int menuItemId, int quantity, decimal price)
         {
             this.OrderDetailId = id;
