@@ -88,32 +88,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudUl0ZW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/OrderDetail/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/OrderDetail/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/OrderDetail/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/OrderDetail/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/OrderDetail/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Order/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Order/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Order/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Order/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Sale/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Sale/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Sale/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Sale/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Sale/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/Shared/Error.cshtml]

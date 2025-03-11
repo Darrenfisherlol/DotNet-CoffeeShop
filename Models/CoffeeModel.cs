@@ -21,6 +21,9 @@ namespace WebApplication2.Models
         [StringLength(100)]
         public string RoastType { get; set; }
         
+        public Coffee()
+        {}
+        
         public Coffee (int id, string name, string description, string roast)
         {
             this.CoffeeId = id;

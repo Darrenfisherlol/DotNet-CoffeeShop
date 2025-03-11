@@ -11,7 +11,7 @@ namespace WebApplication2.Models
         
         [Required]
         [StringLength(100)]
-        public string FistName { get; set; }
+        public string FirstName { get; set; }
         
         [Required]
         [StringLength(100)]
@@ -28,10 +28,12 @@ namespace WebApplication2.Models
         [DataType(DataType.DateTime)]
         public DateTime JoinDate { get; set; } = DateTime.Now;
         
+        public Customer(){}
+        
         public Customer(int id, string fistName, string lastName, string email, string phoneNumber, DateTime joinDate)
         {
             this.CustomerId = id;
-            this.FistName = fistName;
+            this.FirstName = fistName;
             this.LastName = lastName;
             this.Email = email;
             this.Phone = phoneNumber;

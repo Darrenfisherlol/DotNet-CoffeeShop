@@ -12,13 +12,11 @@ namespace WebApplication2.Models
         [Required]
         [ForeignKey("OrderId")]
         public int OrderId { get; set; }
-        
-        public Order order { get; set; }
+        public Order Order { get; set; }
 
         [Required]
         [ForeignKey("MenuItemId")]
         public int MenuItemId { get; set; }
-        public ICollection<MenuItem> MenuItems { get; } = new List<MenuItem>();
         public MenuItem MenuItem { get; set; }
         
         [Required]
@@ -27,6 +25,9 @@ namespace WebApplication2.Models
         [Required]
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
+        
+        public OrderDetail()
+        {}
         
         public OrderDetail (int id, int orderId, int menuItemId, int quantity, decimal price)
         {

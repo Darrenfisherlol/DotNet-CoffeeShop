@@ -12,7 +12,6 @@ namespace WebApplication2.Models
         [Required]
         [ForeignKey("CustomerId")]
         public int CustomerId { get; set; }
-        
         public Customer Customer { get; set; }
         
         [Required]
@@ -23,6 +22,8 @@ namespace WebApplication2.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
         
+        public Order()
+        {}
         public Order (int id, int customerId, Customer customer, DateTime orderDate, decimal price)
         {
             this.OrderId = id;
