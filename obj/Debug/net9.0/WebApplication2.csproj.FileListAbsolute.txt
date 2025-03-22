@@ -855,7 +855,6 @@ I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\scopedc
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\scopedcss\projectbundle\WebApplication2.bundle.scp.css
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\pkbd5t11bj-m9pbawngut.gz
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\sde506kbqk-b9sayid5wm.gz
-I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\rjaplpwhcx-exzx77xu67.gz
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\4waqayht7b-61n19gt1b8.gz
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\sdpnvg2aoh-xtxxf3hu2r.gz
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\8bujvn40dp-t1cqhe9u97.gz
@@ -935,3 +934,5 @@ I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\WebAppl
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\WebApplication2.genruntimeconfig.cache
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\ref\WebApplication2.dll
 I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\qs3z734a9y-100rxt4l1v.gz
+I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\d7f53ma37z-exzx77xu67.gz
+I:\Coding\Projects\CoffeeDev\cofeDev2\DotNet-CoffeeShop\obj\Debug\net9.0\compressed\z3kmu4u0nw-100rxt4l1v.gz

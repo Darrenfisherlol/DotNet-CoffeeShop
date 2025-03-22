@@ -84,6 +84,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlckJhY2tlbmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/MenuItem/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudUl0ZW1cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/MenuItem/customerMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudUl0ZW1cY3VzdG9tZXJNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/MenuItem/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudUl0ZW1cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/MenuItem/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudUl0ZW1cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/MenuItem/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudUl0ZW1cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [I:/Coding/Projects/CoffeeDev/cofeDev2/DotNet-CoffeeShop/Views/MenuItem/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudUl0ZW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

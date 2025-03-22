@@ -1,4 +1,5 @@
 
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @model WebApplication2.Models.MenuItem
 
 @{
@@ -31,24 +32,34 @@
             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
         </div>
         
+        @* @ViewBag.RoastOptions *@
+
         <div class="form-group mb-3">
-            @Html.LabelFor(model => model.CoffeeId, new { @class = "form-label fw-bold" })
-            @Html.TextAreaFor(model => model.CoffeeId, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            <label class="form-label fw-bold">Select a Roast</label>
+            @Html.DropDownListFor(model => model.CoffeeId, (SelectList)ViewBag.RoastOptions,
+                "Select Roast", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CoffeeId, "", new { @class = "text-danger" })
         </div>
+        
+        @* <div class="form-group mb-3"> *@
+        @*     @Html.LabelFor(model => model.CoffeeId, new { @class = "form-label fw-bold" }) *@
+        @*     @Html.TextAreaFor(model => model.CoffeeId, new { @class = "form-control", rows = "3", placeholder = "What blend of beans it this?" }) *@
+        @*     @Html.ValidationMessageFor(model => model.CoffeeId, "", new { @class = "text-danger" }) *@
+        @* </div> *@
+        
         
         <div class="form-group mb-3">
             @Html.LabelFor(model => model.Type, new { @class = "form-label fw-bold" })
             @Html.DropDownListFor(model => model.Type,
                 new SelectList(new[] { "Cappuccino", "Latte", "Espresso", "Tea"}),
-                "Select Menu Item type",
+                "Select Item Type",
                 new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
         </div>
         
         <div class="form-group mb-3">
             @Html.LabelFor(model => model.Price, new { @class = "form-label fw-bold" })
-            @Html.TextAreaFor(model => model.Price, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            @Html.TextAreaFor(model => model.Price, new { @class = "form-control", rows = "3", placeholder = "Add a Price" })
             @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
         </div>
         

@@ -52,7 +52,7 @@
 
         <div class="form-group mb-3">
             @Html.LabelFor(model => model.JoinDate, new { @class = "form-label fw-bold" })
-            @Html.TextBoxFor(model => model.JoinDate, new { @class = "form-control", placeholder = "Select a date", type = "date" })
+            @Html.TextBoxFor(model => model.JoinDate, new { @class = "form-control", placeholder = "Select a date", type = "datetime-local" })
             @Html.ValidationMessageFor(model => model.JoinDate, "", new { @class = "text-danger" })
         </div>
 
@@ -67,12 +67,12 @@
     end
 </div>
 
-
 <script>
-    $(document).ready(function() {
-        // Initialize the jQuery UI datepicker
-        $('input[type="date"]').datepicker({
-            dateFormat: 'yy-mm-dd'  // Set the format as needed
+    $(document).ready(function () {
+        $(".form-control[type='datetime-local']").flatpickr({
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            time_24hr: true
         });
     });
 </script>

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -20,6 +21,12 @@ namespace WebApplication2.Controllers
         // get request to show create page
         public IActionResult Create()
         {
+            var roastAvailability = _context.Coffees
+                .Select(c => new { Id = c.CoffeeId, Name = c.Name })
+                .ToList();
+
+            ViewBag.RoastOptions = new SelectList(roastAvailability, "Id", "Name"); 
+            
             return View();
         }
         

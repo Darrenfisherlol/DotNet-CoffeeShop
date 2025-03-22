@@ -13,8 +13,12 @@
       "PackagePath": "staticwebassets\\css\\CoffeeStyle.css"
     },
     {
-      "Id": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\wwwroot\\css\\UserStyle.css",
-      "PackagePath": "staticwebassets\\css\\UserStyle.css"
+      "Id": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\wwwroot\\css\\CustomerStyle.css",
+      "PackagePath": "staticwebassets\\css\\CustomerStyle.css"
+    },
+    {
+      "Id": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\wwwroot\\css\\MenuStyle.css",
+      "PackagePath": "staticwebassets\\css\\MenuStyle.css"
     },
     {
       "Id": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\wwwroot\\css\\site.css",

@@ -34,6 +34,8 @@ namespace WebApplication2.Controllers
 
             if (ModelState.IsValid)
             {
+                model.JoinDate = model.JoinDate.ToUniversalTime();
+                
                 _context.Customers.Add(model);
                 await _context.SaveChangesAsync();
 
