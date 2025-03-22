@@ -41,7 +41,7 @@ namespace WebApplication2.Controllers
                 return RedirectToAction("Index");
             }
             
-            TempData["Message"] = "Coffee was NOT created successfully";
+            TempData["Message"] = "Coffee was not created successfully";
             return View("Create", coffee);
         }
         

@@ -1,0 +1,22 @@
+@model WebApplication2.Models.MenuItem
+
+<link href="~/css/MenuStyle.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Delete Menu Item";
+    Layout = "_CoffeeLayout";
+}
+
+<h1 style="margin-bottom: 10px">Delete Menu Item</h1>
+
+<div>
+    <h4>@Model.Name</h4>
+    <h4>ID: @Model.MenuItemId</h4>  
+
+    <form asp-action="DeleteConfirm" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.MenuItemId" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

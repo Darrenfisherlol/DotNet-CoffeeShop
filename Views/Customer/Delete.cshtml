@@ -3,7 +3,7 @@
 <link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Delete Customer";
     Layout = "_CoffeeLayout";
 }
 
@@ -15,13 +15,14 @@
         <h3>Delete Customer</h3>
 
         <div>
-            <p>Id: @Model.CustomerId</p>
+            <p>@Model.FirstName, @Model.LastName</p>
+            <p>Id: @Model.CustomerId </p>
             @Html.HiddenFor(model => model.CustomerId)
         </div>
 
         <div>
-            <button type="submit">Yes</button>
-            @Html.ActionLink("No", "Index", "Coffee")
+            <button type="submit" class="btn btn-danger">Yes</button>
+            @Html.ActionLink("No", "Index", "Coffee",  new {@class="btn btn-secondary"})
         </div>
     </div>
 }

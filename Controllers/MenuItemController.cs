@@ -61,7 +61,7 @@ namespace WebApplication2.Controllers
         }
         
         // post request to push changes to db
-        public async Task<IActionResult> EditOrder(MenuItem model)
+        public async Task<IActionResult> EditMenuItem(MenuItem model)
         {
             _context.MenuItems.Update(model);
             await _context.SaveChangesAsync();

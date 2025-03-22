@@ -1,0 +1,53 @@
+@model WebApplication2.Models.MenuItem
+
+@{
+    ViewBag.Title = "Edit Menu Item";
+    Layout = "_CoffeeLayout";
+}
+
+<link href="~/css/MenuStyle.css" rel="stylesheet" type="text/css" />
+
+
+<h1 style="margin-bottom: 20px">Edit Menu Item</h1>
+
+@using (Html.BeginForm("EditMenuitem", "MenuItem", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+           <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Name, new { @class = "form-label fw-bold" })
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Enter coffee name" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Description, new { @class = "form-label fw-bold" })
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+        
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.CoffeeId, new { @class = "form-label fw-bold" })
+            @Html.TextAreaFor(model => model.CoffeeId, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            @Html.ValidationMessageFor(model => model.CoffeeId, "", new { @class = "text-danger" })
+        </div>
+        
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Type, new { @class = "form-label fw-bold" })
+            @Html.DropDownListFor(model => model.Type,
+                new SelectList(new[] { "Cappuccino", "Latte", "Espresso", "Tea"}),
+                "Select Menu Item type",
+                new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+        </div>
+        
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Price, new { @class = "form-label fw-bold" })
+            @Html.TextAreaFor(model => model.Price, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </div>
+    
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    @Html.ActionLink("Cancel", "Index", "Coffee", null, new { @class = "btn btn-secondary" })
+
+}

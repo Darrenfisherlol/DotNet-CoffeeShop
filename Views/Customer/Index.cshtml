@@ -1,6 +1,6 @@
 @model IEnumerable<WebApplication2.Models.Customer>
 
-<link href="~/css/UserStyle.css" rel="stylesheet" type="text/css" />
+<link href="~/css/CustomerStyle.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "title";
@@ -55,4 +55,10 @@
         }
         </tbody>
     </table>
+</div>
+
+
+<div>
+    <a asp-controller="Customer" asp-action="Create" class="fw-bold" style="padding: 5px"> Create </a>
+    <a asp-controller="ManagerBackend" asp-action="Index" class="fw-bold" style="padding: 5px"> Backend Hub </a>
 </div>

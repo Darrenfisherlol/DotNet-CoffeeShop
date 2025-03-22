@@ -1,24 +1,29 @@
 @model WebApplication2.Models.Customer
 
-
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Customer Details Page";
     Layout = "_CoffeeLayout";
 }
 
-<h1> Customer Detail Page </h1>
+<h1 style="margin-bottom: 20px">Customer Details</h1>
 
-<div>
-    <h4> @Model.FirstName @Model.LastName</h4>
-
-    <div>
-        <span>Details:</span>
-        <ul>@Model.CustomerId </ul>
-        <ul>@Model.Email </ul>
-        <ul>@Model.Phone </ul>
-        <ul>@Model.JoinDate</ul>
+<div class="customer-details-container">
+    <!-- customer Image on the left -->
+    <div class="customer-image">
+        <img src="~/images/customer-image.jpg" alt="customer Image" class="img-fluid" />
     </div>
 
+    <!-- customer Details on the right -->
+    <div class="customer-info">
+        <h2>@Model.FirstName @Model.LastName</h2>
+        <div class="customer-meta">
+            <span> Member Since: @Model.JoinDate</span>
+        </div>
+        <div class="customer-description">
+            <strong>Contact Info</strong>
+            <p>@Model.Phone</p>
+            <p>@Model.Email</p>
+        </div>
+    </div>
 </div>
-
 

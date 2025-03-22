@@ -1,0 +1,64 @@
+
+@model WebApplication2.Models.MenuItem
+
+@{
+    ViewBag.Title = "Add Menu Item";
+    Layout = "_CoffeeLayout";
+}
+
+<link href="~/css/MenuStyle.css" rel="stylesheet" type="text/css" />
+
+<h1 class="mb-4">Add a new Menu Item</h1>
+
+@using (Html.BeginForm("CreateMenuItemForm", "MenuItem", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card p-4 shadow-sm">
+        <h4 class="mb-3">Create Menu Item</h4>
+
+        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+        
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Name, new { @class = "form-label fw-bold" })
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Enter coffee name" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Description, new { @class = "form-label fw-bold" })
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+        
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.CoffeeId, new { @class = "form-label fw-bold" })
+            @Html.TextAreaFor(model => model.CoffeeId, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            @Html.ValidationMessageFor(model => model.CoffeeId, "", new { @class = "text-danger" })
+        </div>
+        
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Type, new { @class = "form-label fw-bold" })
+            @Html.DropDownListFor(model => model.Type,
+                new SelectList(new[] { "Cappuccino", "Latte", "Espresso", "Tea"}),
+                "Select Menu Item type",
+                new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+        </div>
+        
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Price, new { @class = "form-label fw-bold" })
+            @Html.TextAreaFor(model => model.Price, new { @class = "form-control", rows = "3", placeholder = "Enter a short description" })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </div>
+        
+        <div class="d-flex gap-2 mt-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="@Url.Action("Index", "Coffee")" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+}
+
+<div class="mt-4">
+    <a href="@Url.Action("Index", "MenuItem")">Back to List</a>
+</div>

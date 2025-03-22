@@ -26,7 +26,7 @@ namespace WebApplication2.Models
         
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime JoinDate { get; set; } = DateTime.Now;
+        public DateTime JoinDate { get; set; };
         
         public Customer(){}
         

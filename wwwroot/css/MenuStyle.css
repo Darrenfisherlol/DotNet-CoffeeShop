@@ -1,0 +1,154 @@
+
+/*All*/
+
+
+
+/*Index*/
+
+
+/*detailTopImage*/
+.detailTopImage{
+    max-width: 100%;
+    height: auto;
+}
+
+/* index Table*/
+.detailTable
+{
+    border-collapse: collapse;
+    border: 1px solid black;
+    
+    table-layout: auto;
+    
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+/* section 2 */
+.sectionTwo{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sectionTwoInnerContainer{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
+    /*flex box multiple divs*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.sectionTwoInnerContainerRight{
+    max-height: 25rem;
+}
+.sectionTwoInnerContainerLeft{
+    max-width: 25rem;
+
+}
+
+/*horizontal fit*/
+/*max-width: fit-content;*/
+/*margin-left: auto;*/
+/*margin-right: auto;*/
+
+/* Section 3 */
+.sectionThree {
+    display: flex;
+
+}
+
+.sectionThreeOuterContainer{
+    /*max-width: 25rem;*/
+    max-height: 25rem;
+    flex: 1;
+    padding: .5rem;
+    margin: 2rem;
+}
+
+
+
+/* section 4  (2 but flipped)*/
+.sectionFour{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sectionFourInnerContainer{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
+    /*flex box multiple divs*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.sectionFourInnerContainerLeft{
+    max-height: 25rem;
+    
+}
+.sectionFourInnerContainerRight{
+    max-width: 25rem;
+
+}
+
+
+/* coffee details*/
+.coffee-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.coffee-image img {
+    max-width: 300px; /* Set max width for image */
+    height: auto;
+    border-radius: 10px;
+}
+
+.coffee-info {
+    max-width: 500px; /* Control the max width of the text section */
+}
+
+.coffee-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.coffee-meta {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.coffee-description p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/*coffee edit*/
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    margin-left: 10px;
+}
+
