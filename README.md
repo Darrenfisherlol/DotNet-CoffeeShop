@@ -1,9 +1,9 @@
 
 ## Cofe Shop
 
-.Net application to learn more about full stack dev and showcase a CRUD coffee shop application.
+Cofe Shop is a MVC .Net application that I created to learn more about full stack dev and showcase a "store" like application.
 
-Goal: Make an app like Starbucks and allow people to order drinks
+Goal: Make a MVC .Net app like Dunkin Donuts/Starbucks that allows people to order drinks. Make a "manager view" to showcase analytics / the backend.
 
 ---
 
@@ -20,6 +20,5 @@ Goal: Make an app like Starbucks and allow people to order drinks
 
 ### About me :D
 - Open to work
-- This app is using HTML, CSS, and .Net
-- Goal is to use HTML, CSS, JS, & ASP .Net Core build multiple apps
-  - ex: coffee shop, financial, store sales & analytics, ecommerce, and dating site
+- This app is using HTML, CSS, JS, and .Net
+- Goal is to use HTML, CSS, JS, & ASP .Net Core to learn about .Net full stack
