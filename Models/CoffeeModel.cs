@@ -24,9 +24,8 @@ namespace WebApplication2.Models
         public Coffee()
         {}
         
-        public Coffee (int id, string name, string description, string roast)
+        public Coffee (string name, string description, string roast)
         {
-            this.CoffeeId = id;
             this.Name = name;
             this.Description = description;
             this.RoastType = roast;

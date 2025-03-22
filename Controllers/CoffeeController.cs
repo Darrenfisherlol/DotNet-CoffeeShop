@@ -6,7 +6,12 @@ namespace WebApplication2.Controllers
 {
     public class CoffeeController : Controller
     {
-        private ApplicationDbContext _context = new ApplicationDbContext();
+        private readonly ApplicationDbContext _context;
+
+        public CoffeeController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         
         // get request to show index page
         public IActionResult Index()
@@ -20,15 +25,24 @@ namespace WebApplication2.Controllers
             return View();
         }
         
-        // post request to push new coffee to db 
+        // post request to push new coffee to db
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateCoffeeForm(Coffee coffee)
         {
-            _context.Coffees.Add(coffee);
-            await _context.SaveChangesAsync();
 
-            ViewBag.Message = "Coffee created successfully";
+            if (ModelState.IsValid)
+            {
+                _context.Coffees.Add(coffee);
+                await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+                TempData["Message"] = "Coffee created successfully";
+
+                return RedirectToAction("Index");
+            }
+            
+            TempData["Message"] = "Coffee was NOT created successfully";
+            return View("Create", coffee);
         }
         
         // get request to get coffee detail
@@ -58,6 +72,8 @@ namespace WebApplication2.Controllers
         }
         
         // post request to push changes to db
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> EditCoffee(Coffee coffee)
         {
             _context.Coffees.Update(coffee);
@@ -80,6 +96,8 @@ namespace WebApplication2.Controllers
         }
         
         // post request to edit db to remove coffee
+        [HttpPost, ActionName("DeleteConfirm")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirm(int id)
         {
             var coffee =  await _context.Coffees.FindAsync(id);
@@ -91,6 +109,7 @@ namespace WebApplication2.Controllers
             
             _context.Coffees.Remove(coffee);
             await _context.SaveChangesAsync();
+            TempData["Message"] = "Coffee deleted successfully";
 
             return RedirectToAction("Index");
         }

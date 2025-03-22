@@ -24,9 +24,8 @@ namespace WebApplication2.Models
         
         public Order()
         {}
-        public Order (int id, int customerId, Customer customer, DateTime orderDate, decimal price)
+        public Order (int customerId, Customer customer, DateTime orderDate, decimal price)
         {
-            this.OrderId = id;
             this.CustomerId = customerId;
             this.Customer = customer;
             this.OrderDate = orderDate;

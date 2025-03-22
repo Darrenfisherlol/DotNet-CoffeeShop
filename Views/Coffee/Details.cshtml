@@ -1,7 +1,7 @@
 @model WebApplication2.Models.Coffee
 
 @{
-    ViewBag.Title = "Coffee Details viewbag title";
+    ViewBag.Title = "Coffee Details";
     Layout = "_CoffeeLayout";
 }
 
@@ -9,27 +9,28 @@
 
 <h1 style="margin-bottom: 10px"> Coffee Home </h1>
 
-<div>
-    <div class="w-100">
-        <span> img of coffee</span>
-        <div>
-            <h5>@Model.Name</h5>
-            <span> - @Model.Name</span>
-            <span> - @Model.Description</span>
-            <span> - @Model.RoastType</span>
+<h1 style="margin-bottom: 20px">Coffee Details</h1>
+
+<div class="coffee-details-container">
+    <!-- Coffee Image on the left -->
+    <div class="coffee-image">
+        <img src="~/images/coffee-image.jpg" alt="Coffee Image" class="img-fluid" />
+    </div>
+
+    <!-- Coffee Details on the right -->
+    <div class="coffee-info">
+        <h2>@Model.Name</h2>
+        <div class="coffee-meta">
+            <span><strong>Roast Type:</strong> @Model.RoastType</span>
+        </div>
+        <div class="coffee-description">
+            <strong>Description:</strong>
+            <p>@Model.Description</p>
         </div>
     </div>
-
-    <div>
-         
-    </div>
-
-    <div>
-    </div>
-
 </div>
 
-
 <footer>
-    footer
+    footer content
 </footer>
+

@@ -29,9 +29,8 @@ namespace WebApplication2.Models
         public OrderDetail()
         {}
         
-        public OrderDetail (int id, int orderId, int menuItemId, int quantity, decimal price)
+        public OrderDetail (int orderId, int menuItemId, int quantity, decimal price)
         {
-            this.OrderDetailId = id;
             this.OrderId = orderId;
             this.MenuItemId = menuItemId;
             this.Quantity = quantity;

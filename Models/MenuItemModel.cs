@@ -33,9 +33,8 @@ namespace WebApplication2.Models
         public MenuItem()
         {}
         
-        public MenuItem (int id, string name, string description, string type, decimal price)
+        public MenuItem (string name, string description, string type, decimal price)
         {
-            this.MenuItemId = id;
             this.Name = name;
             this.Description = description;
             this.Type = type;

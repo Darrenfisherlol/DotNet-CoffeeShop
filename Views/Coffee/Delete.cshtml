@@ -3,25 +3,20 @@
 <link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Delete Coffee";
     Layout = "_CoffeeLayout";
 }
 
-@using (Html.BeginForm("DeleteConfirm", "Coffee", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+<h1 style="margin-bottom: 10px">Delete Coffee</h1>
 
-    <div>
-        <h3>Delete Coffee</h3>
+<div>
+    <h4>@Model.Name</h4>
+    <h4>ID: @Model.CoffeeId</h4>  
 
-        <div>
-            <p>Id: @Model.CoffeeId</p>
-            @Html.HiddenFor(model => model.CoffeeId)
-        </div>
-
-        <div>
-            <button type="submit">Yes</button>
-            @Html.ActionLink("No", "Index", "Coffee")
-        </div>
-    </div>
-}
+    <form asp-action="DeleteConfirm" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.CoffeeId" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

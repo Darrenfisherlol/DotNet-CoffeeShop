@@ -16,10 +16,8 @@
             <tr>
                 <th>Id</th>
                 <th>Coffee Name</th>
-                <th>Category</th>
-                <th>Temperature</th>
                 <th>Description</th>
-                <th>Price</th>
+                <th>Roast</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -43,7 +41,6 @@
                  
                         <td>
                             <a asp-action="Edit" asp-route-id="@coffee.CoffeeId">Edit</a>
-                            @* <a asp-action="Details" asp-route-id="@customer.Id">Details</a> *@
                             <a asp-action="Delete" asp-route-id="@coffee.CoffeeId">Delete</a>
                         </td>
                     </tr>    
@@ -54,6 +51,7 @@
 </div>
 
 <div>
-    <a asp-controller="Coffee" asp-action="Create" class="fw-bold"> Create </a>
+    <a asp-controller="Coffee" asp-action="Create" class="fw-bold" style="padding: 5px"> Create </a>
+    <a asp-controller="ManagerBackend" asp-action="Index" class="fw-bold" style="padding: 5px"> Backend Hub </a>
 </div>
 

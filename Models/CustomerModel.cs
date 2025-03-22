@@ -30,9 +30,8 @@ namespace WebApplication2.Models
         
         public Customer(){}
         
-        public Customer(int id, string fistName, string lastName, string email, string phoneNumber, DateTime joinDate)
+        public Customer(string fistName, string lastName, string email, string phoneNumber, DateTime joinDate)
         {
-            this.CustomerId = id;
             this.FirstName = fistName;
             this.LastName = lastName;
             this.Email = email;

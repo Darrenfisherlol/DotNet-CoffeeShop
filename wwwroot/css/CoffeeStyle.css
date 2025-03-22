@@ -103,20 +103,52 @@
 }
 
 
+/* coffee details*/
+.coffee-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
 
+.coffee-image img {
+    max-width: 300px; /* Set max width for image */
+    height: auto;
+    border-radius: 10px;
+}
 
+.coffee-info {
+    max-width: 500px; /* Control the max width of the text section */
+}
 
+.coffee-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 
+.coffee-meta {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
 
+.coffee-description p {
+    font-size: 1.1rem;
+    color: #333;
+}
 
+/*coffee edit*/
 
-/*Detail*/
+.form-group {
+    margin-bottom: 15px;
+}
 
+.btn {
+    margin-top: 10px;
+}
 
+.btn-secondary {
+    margin-left: 10px;
+}
 
-
-/*Create*/
-
-/*Edit*/
-
-/*Delete*/

@@ -1,49 +1,15 @@
 
-## Cofe
+## Cofe Shop
 
-.Net application to learn more about full stack dev and showcase some skills.
+.Net application to learn more about full stack dev and showcase a CRUD coffee shop application.
 
 Goal: Make an app like Starbucks and allow people to order drinks
 
 ---
 
-### MVC Layout
-
-- Coffee 
-  - Index page
-  - Create - add new coffee drinks
-  - Delete - remove coffee drinks
-  - Details - showcase all drinks (menu like)
-  - Edit - change details of a page with user input
-
-
-- Order
-  - Take customer input based on clicks
-
-
-- About us
-  - Simple about us page
-
-
-- User
-  - Index page
-  - Create - add new users drinks
-  - Delete - remove user
-  - Details - showcase all users
-  - Edit - change details of user
-
-
-- ManagerBackend - analytics and all backend data 
-  - Showcases more backend skills
-  - View all database tables
-  - View controllers (mvc)
-  - View "analytics" of our store
-
----
-
-### Setup 
+### Setup
 - Download zip & install packages
-- Open Docker 
+- Open Docker
   - Postgres container
   - Edit connection string in app Data folder ex: "Host=localhost;Database=postgres;Username=postgres;Password=abc"
 - DB migration to create db and data models via code
@@ -55,7 +21,5 @@ Goal: Make an app like Starbucks and allow people to order drinks
 ### About me :D
 - Open to work
 - This app is using HTML, CSS, and .Net
-- Goal is to use HTML, CSS, Vanilla JS, React, .Net, & Node to build multiple apps
+- Goal is to use HTML, CSS, JS, & ASP .Net Core build multiple apps
   - ex: coffee shop, financial, store sales & analytics, ecommerce, and dating site
-
-

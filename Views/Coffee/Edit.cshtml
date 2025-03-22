@@ -1,55 +1,45 @@
 @model WebApplication2.Models.Coffee
-@* @Model WebApplication2.Models.Coffee *@
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Edit coffee";
     Layout = "_CoffeeLayout";
 }
 
 <link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
 
 
-<h1 style="margin-bottom: 10px"> Edit coffee </h1>
+<h1 style="margin-bottom: 20px">Edit Coffee</h1>
 
+@using (Html.BeginForm("EditCoffee", "Coffee", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
 
-<div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CoffeeId)
+        @Html.EditorFor(model => model.CoffeeId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+    </div>
 
-    @if (Model == null)
-    {
-        <form asp-action="Edit" method="get">
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
 
-            <div class="form-group">
-                <label asp-for="CoffeeId">Enter Coffee CoffeeId:</label>
-                <input type="number" name="CoffeeId" class="form-control" required="required"/>
-            </div>
-            <button type="submit" class="btn btn-primary"> Find Coffee CoffeeId </button>
-        </form>
-    }
-    else
-    {
-        <form asp-action="EditCoffee" method="post">
-            <input type="hCoffeeIdden" asp-for="CoffeeId"/>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Description)
+    </div>
 
-            <div class="form-group">
-                <label asp-for="Name"></label>
-                <input asp-for="Name" class="form-control"/>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description"></label>
-                <input asp-for="Description" class="form-control"/>
-            </div>
-            <div class="form-group">
-                <label asp-for="RoastType"></label>
-                <input asp-for="RoastType" class="form-control"/>
-            </div>
-      
-            <button type="submit" class="btn btn-primary"> Save Changes </button>
-        </form>
-    }
+    <div class="form-group mb-3">
+        @Html.LabelFor(model => model.RoastType, new { @class = "form-label fw-bold" })
+        @Html.DropDownListFor(model => model.RoastType,
+            new SelectList(new[] { "Light", "Medium", "Dark" }),
+            new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RoastType, "", new { @class = "text-danger" })
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    @Html.ActionLink("Cancel", "Index", "Coffee", null, new { @class = "btn btn-secondary" })
 
-</div>
-
-<div>
-    edit done
-</div>
-
+}
