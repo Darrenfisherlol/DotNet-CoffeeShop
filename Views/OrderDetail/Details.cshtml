@@ -2,23 +2,31 @@
 
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Order Details";
     Layout = "_CoffeeLayout";
 }
 
-<h1> Customer Detail Page </h1>
+<link href="~/css/OrderStyle.css" rel="stylesheet" type="text/css" />
 
-<div>
-    <h4> @Model.OrderDetailId</h4>
+<h1 style="margin-bottom: 20px">Order Details</h1>
 
-    <div>
-        <span>Details:</span>
-        <ul>@Model.OrderId</ul>
-        <ul>@Model.MenuItemId </ul>
-        <ul>@Model.Quantity </ul>
-        <ul>@Model.Price </ul>
+<div class="order-details-container">
+    <div class="order-image">
+        <img src="~/images/order-image.jpg" alt="order Image" class="img-fluid" />
     </div>
 
+    <div class="order-info">
+        <h2>@Model.OrderDetailId</h2>
+        <div class="order-meta">
+            <span><strong>MenuItem:</strong> @Model.MenuItem</span>
+            <span><strong>Price:</strong> @Model.Price</span>
+            <span><strong>Quantity:</strong> @Model.Quantity</span>
+            <span><strong>OrderId:</strong> @Model.OrderId</span>
+        </div>
+    </div>
 </div>
 
+<footer>
+    footer content
+</footer>
 

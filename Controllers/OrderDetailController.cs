@@ -6,8 +6,12 @@ namespace WebApplication2.Controllers
 {
     public class OrderDetailController : Controller
     {
-        private ApplicationDbContext _context = new ApplicationDbContext(); 
-        
+        private readonly ApplicationDbContext _context;
+
+        public OrderDetailController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View(_context.OrderDetails.ToList());
@@ -20,14 +24,24 @@ namespace WebApplication2.Controllers
         }
         
         // post request to edit data
-        public async Task<IActionResult> CreateOrderForm(OrderDetail model)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateOrderDetailForm(OrderDetail model)
         {
-            _context.OrderDetails.Add(model);
-            await _context.SaveChangesAsync();
+
+            if (ModelState.IsValid)
+            {
+                
+                _context.OrderDetails.Add(model);
+                await _context.SaveChangesAsync();
+
+                TempData["Message"] = "OrderDetail created successfully";
+
+                return RedirectToAction("Index");
+            }
             
-            ViewBag.Message = "OrderDetail created successfully";
-            
-            return RedirectToAction("Index");
+            TempData["Message"] = "OrderDetail was not created successfully";
+            return View("Create", model);
         }
 
         // get request to showcase OrderDetail specific data
@@ -57,6 +71,8 @@ namespace WebApplication2.Controllers
         }
         
         // post request to push changes to db
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditOrder(OrderDetail model)
         {
             _context.OrderDetails.Update(model);
@@ -79,6 +95,8 @@ namespace WebApplication2.Controllers
         }
         
         // post request to push changes to db
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirm(int id)
         {
             var orderDetail =  await _context.OrderDetails.FindAsync(id);
@@ -90,6 +108,7 @@ namespace WebApplication2.Controllers
             
             _context.OrderDetails.Remove(orderDetail);
             await _context.SaveChangesAsync();
+            TempData["Message"] = "OrderDetail deleted successfully";
 
             return RedirectToAction("Index");
         }

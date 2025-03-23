@@ -7,9 +7,13 @@ namespace WebApplication2.Controllers
 {
     public class OrderController : Controller
     {
-        private ApplicationDbContext _context = new ApplicationDbContext();
+        private readonly ApplicationDbContext _context;
+
+        public OrderController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         
-        // get request to show index page
         // get request to show index page
         public IActionResult Index()
         {
@@ -23,14 +27,24 @@ namespace WebApplication2.Controllers
         }
         
         // post request to edit data
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateOrderForm(Order model)
         {
-            _context.Orders.Add(model);
-            await _context.SaveChangesAsync();
+            if (ModelState.IsValid)
+            {
+                model.OrderDate = model.OrderDate.ToUniversalTime();
+                
+                _context.Orders.Add(model);
+                await _context.SaveChangesAsync();
+
+                TempData["Message"] = "Order created successfully";
+
+                return RedirectToAction("Index");
+            }
             
-            ViewBag.Message = "Order created successfully";
-            
-            return RedirectToAction("Index");
+            TempData["Message"] = "Order was not created successfully";
+            return View("Create", model);
         }
 
         // get request to showcase Order specific data
@@ -60,6 +74,8 @@ namespace WebApplication2.Controllers
         }
         
         // post request to push changes to db
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditOrder(Order model)
         {
             _context.Orders.Update(model);
@@ -82,6 +98,8 @@ namespace WebApplication2.Controllers
         }
         
         // post request to push changes to db
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirm(int id)
         {
             var order =  await _context.Orders.FindAsync(id);
@@ -93,7 +111,8 @@ namespace WebApplication2.Controllers
             
             _context.Orders.Remove(order);
             await _context.SaveChangesAsync();
-
+            TempData["Message"] = "Order deleted successfully";
+            
             return RedirectToAction("Index");
         }
     }

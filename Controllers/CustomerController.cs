@@ -99,7 +99,7 @@ namespace WebApplication2.Controllers
         }
         
         // post request to push changes to db
-        [HttpPost, ActionName("DeleteConfirm")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirm(int id)
         {

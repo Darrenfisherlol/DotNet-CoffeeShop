@@ -1,27 +1,32 @@
 @model WebApplication2.Models.OrderDetail
 
-<link href="~/css/CoffeeStyle.css" rel="stylesheet" type="text/css" />
+<link href="~/css/OrderDetailStyle.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Delete Order Detail";
     Layout = "_CoffeeLayout";
 }
 
-@using (Html.BeginForm("DeleteConfirm", "OrderDetail", FormMethod.Post))
+@using (Html.BeginForm("DeleteConfirm", "Order", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div>
-        <h3>Delete Order Details</h3>
+        <h3>Delete Order Detail</h3>
 
         <div>
-            <p>Id: @Model.OrderId</p>
-            @Html.HiddenFor(model => model.OrderDetailId)
+            <p>@Model.OrderDetailId, </p>
+            <div>
+                <p>Customer: @Model.OrderId </p>
+                <p>Date: @Model.MenuItemId </p>
+            </div>
+            
+            @Html.HiddenFor(model => model.OrderId)
         </div>
 
         <div>
-            <button type="submit">Yes</button>
-            @Html.ActionLink("No", "Index", "Coffee")
+            <button type="submit" class="btn btn-danger">Yes</button>
+            @Html.ActionLink("No", "Index", "OrderDetail",  new {@class="btn btn-secondary"})
         </div>
     </div>
 }

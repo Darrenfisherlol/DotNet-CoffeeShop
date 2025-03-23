@@ -1,8 +1,9 @@
 @model IEnumerable<WebApplication2.Models.OrderDetail>
 
+<link href="~/css/OrderDetailStyle.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Order Detail";
     Layout = "_CoffeeLayout";
 }
 
@@ -26,24 +27,24 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(orderList => orderDetail.OrderDetailId)
+                        @Html.DisplayFor(orderDetailList => orderDetail.OrderDetailId)
                     </td>
                     <td>
-                        @Html.DisplayFor(orderList => orderDetail.OrderId)
+                        @Html.DisplayFor(orderDetailList => orderDetail.OrderId)
                     </td>
                     <td>
-                        @Html.DisplayFor(orderList => orderDetail.MenuItemId)
+                        @Html.DisplayFor(orderDetailList => orderDetail.MenuItemId)
                     </td>
                     <td>
-                        @Html.DisplayFor(orderList => orderDetail.Quantity)
+                        @Html.DisplayFor(orderDetailList => orderDetail.Quantity)
                     </td>
                     <td>
-                        @Html.DisplayFor(orderList => orderDetail.Price)
+                        @Html.DisplayFor(orderDetailList => orderDetail.Price)
                     </td>
 
                     <td>
-                        <a asp-action="Edit" asp-route-id="@orderDetail.OrderDetailId">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@orderDetail.OrderDetailId">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@orderDetail.OrderId">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@orderDetail.OrderId">Delete</a>
                     </td>
                 </tr>
             }
@@ -51,3 +52,10 @@
         </tbody>
     </table>
 </div>
+
+
+<div>
+    <a asp-controller="OrderDetail" asp-action="Create" class="fw-bold" style="padding: 5px"> Create </a>
+    <a asp-controller="ManagerBackend" asp-action="Index" class="fw-bold" style="padding: 5px"> Backend Hub </a>
+</div>
+

@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\css\\MenuStyle.css"
     },
     {
+      "Id": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\wwwroot\\css\\OrderDetailStyle.css",
+      "PackagePath": "staticwebassets\\css\\OrderDetailStyle.css"
+    },
+    {
+      "Id": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\wwwroot\\css\\OrderStyle.css",
+      "PackagePath": "staticwebassets\\css\\OrderStyle.css"
+    },
+    {
       "Id": "I:\\Coding\\Projects\\CoffeeDev\\cofeDev2\\DotNet-CoffeeShop\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

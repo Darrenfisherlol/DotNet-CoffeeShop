@@ -16,7 +16,7 @@ namespace WebApplication2.Models
         
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime OrderDate { get; set; } = DateTime.Now;
+        public DateTime OrderDate { get; set; } = DateTime.Now.ToUniversalTime();
         
         [Required]
         [Column(TypeName = "decimal(10,2)")]
