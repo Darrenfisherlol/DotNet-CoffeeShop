@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApplication2.Data;
 using WebApplication2.Models;
 
@@ -20,6 +21,20 @@ namespace WebApplication2.Controllers
         // get request to show create page
         public IActionResult Create()
         {
+            ViewBag.Order = new SelectList(_context.Orders
+                .OrderBy(x => x.OrderDate)
+                .Take(10)
+                .Select(x => new 
+            {
+                x.OrderId
+            }), "OrderId", "OrderId");
+            
+            ViewBag.MenuItem = new SelectList(_context.MenuItems.Select(x => new 
+            {
+                x.MenuItemId,
+                x.Name,
+            }), "MenuItemId", "Name");
+            
             return View();
         }
         

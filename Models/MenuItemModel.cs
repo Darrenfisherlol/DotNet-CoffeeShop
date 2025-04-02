@@ -20,7 +20,7 @@ namespace WebApplication2.Models
         [Required]
         [ForeignKey("CoffeeId")]
         public int CoffeeId { get; set; }
-        public Coffee Coffee { get; set; }
+        public Coffee? Coffee { get; set; }
         
         [Required]
         [StringLength(100)]
@@ -30,16 +30,19 @@ namespace WebApplication2.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
         
-        public MenuItem()
-        {}
+        public List<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
         
-        public MenuItem (string name, string description, string type, decimal price)
+        public MenuItem() {}
+        
+        public MenuItem (string name, string description, int coffeeId, string type, decimal price)
         {
             this.Name = name;
             this.Description = description;
+            this.CoffeeId = coffeeId;
             this.Type = type;
             this.Price = price;
         }
+        
     }
 }
 

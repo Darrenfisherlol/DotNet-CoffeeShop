@@ -16,7 +16,6 @@
             <th>Order Id</th>
             <th>Customer Id</th>
             <th>Order Date</th>
-            <th>Price</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -33,9 +32,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(orderList => order.OrderDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(orderList => order.Price)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@order.OrderId">Edit</a>

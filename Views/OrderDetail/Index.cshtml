@@ -18,7 +18,7 @@
             <th>OrderID</th>
             <th>MenuItemId</th>
             <th>Quantity</th>
-            <th>Price</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -38,10 +38,7 @@
                     <td>
                         @Html.DisplayFor(orderDetailList => orderDetail.Quantity)
                     </td>
-                    <td>
-                        @Html.DisplayFor(orderDetailList => orderDetail.Price)
-                    </td>
-
+                    
                     <td>
                         <a asp-action="Edit" asp-route-id="@orderDetail.OrderId">Edit</a>
                         <a asp-action="Delete" asp-route-id="@orderDetail.OrderId">Delete</a>

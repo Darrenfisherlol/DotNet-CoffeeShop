@@ -21,6 +21,8 @@ namespace WebApplication2.Models
         [StringLength(100)]
         public string RoastType { get; set; }
         
+        public ICollection<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
+        
         public Coffee()
         {}
         

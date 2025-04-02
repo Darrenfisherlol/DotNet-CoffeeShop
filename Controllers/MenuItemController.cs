@@ -10,7 +10,12 @@ namespace WebApplication2.Controllers
 {
     public class MenuItemController : Controller
     {
-        private ApplicationDbContext _context = new ApplicationDbContext(); 
+        private readonly ApplicationDbContext _context;
+
+        public MenuItemController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         
         // get request to show index page
            public IActionResult Index()

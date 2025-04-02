@@ -1,5 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
 using WebApplication2.Models;
 
@@ -15,22 +17,33 @@ namespace WebApplication2.Controllers
         }
         
         // get request to show index page
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_context.Orders.ToList());
+            var orders = await _context.Orders.ToListAsync();
+            return View(orders);
         }
         
         // get request to show create page
         public IActionResult Create()
         {
+            ViewBag.Customers = new SelectList(_context.Customers
+                .OrderBy(x=> x.JoinDate)
+                .Take(10)
+                .Select(c => new 
+            {
+                c.CustomerId,
+                FullName = c.FirstName + " " + c.LastName
+            }), "CustomerId", "FullName");
+            
             return View();
         }
         
         // post request to edit data
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateOrderForm(Order model)
+        public async Task<IActionResult> CreateOrderForm([Bind("CustomerId,OrderDate")] Order model)
         {
+           
             if (ModelState.IsValid)
             {
                 model.OrderDate = model.OrderDate.ToUniversalTime();
@@ -39,18 +52,24 @@ namespace WebApplication2.Controllers
                 await _context.SaveChangesAsync();
 
                 TempData["Message"] = "Order created successfully";
-
+               
                 return RedirectToAction("Index");
             }
             
             TempData["Message"] = "Order was not created successfully";
             return View("Create", model);
         }
-
+        
+        
+        
+        // -------------------
+        
         // get request to showcase Order specific data
         public async Task<IActionResult> Detail(int? id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Orders
+                .Include(o => o.Customer)
+                .FirstOrDefaultAsync(o => o.OrderId == id);
 
             if (order == null)
             {
@@ -78,10 +97,15 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditOrder(Order model)
         {
-            _context.Orders.Update(model);
-            await _context.SaveChangesAsync();
+            if (ModelState.IsValid)
+            {
+                _context.Orders.Update(model);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
             
-            return RedirectToAction("Index");
+            TempData["Message"] = "Error updating model";
+            return RedirectToAction("Edit");
         }
         
         // get request to get to the delete page with model filled in

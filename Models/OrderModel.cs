@@ -12,25 +12,22 @@ namespace WebApplication2.Models
         [Required]
         [ForeignKey("CustomerId")]
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        
+        public Customer? Customer { get; set; }
         
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime OrderDate { get; set; } = DateTime.Now.ToUniversalTime();
+        public DateTime OrderDate { get; set; } = DateTime.UtcNow;
         
-        [Required]
-        [Column(TypeName = "decimal(10,2)")]
-        public decimal Price { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
         
-        public Order()
-        {}
-        public Order (int customerId, Customer customer, DateTime orderDate, decimal price)
+        public Order() {}
+        
+        public Order (int customerId)
         {
             this.CustomerId = customerId;
-            this.Customer = customer;
-            this.OrderDate = orderDate;
-            this.Price = price;
         }
+        
     }
 }
 

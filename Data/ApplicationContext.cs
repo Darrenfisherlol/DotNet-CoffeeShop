@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WebApplication2.Models;
 
 namespace WebApplication2.Data
@@ -11,6 +12,48 @@ namespace WebApplication2.Data
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Order> Orders { get; set; }
 
+        // ----RELATIONSHIP MAPPING------
+        
+        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // CUSTOMER TO ORDER
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.Customer)
+                .WithMany(c => c.Orders)
+                .HasForeignKey(o => o.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            // COFFEE TO MENUITEM
+            modelBuilder.Entity<MenuItem>()
+                .HasOne(m => m.Coffee)
+                .WithMany(c => c.MenuItems)
+                .HasForeignKey(m => m.CoffeeId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            // ORDER ---> ORDERDETAIL <--- MENU ITEM
+            
+            // Composite Key for Join Table
+            modelBuilder.Entity<OrderDetail>()
+                .HasKey(od => new { od.OrderId, od.MenuItemId }); 
+            
+            modelBuilder.Entity<OrderDetail>()
+                .HasOne(od => od.Order)
+                // Navigation Property in order
+                .WithMany(o => o.OrderDetails)
+                // Fk
+                .HasForeignKey(od => od.OrderId);
+            
+            modelBuilder.Entity<OrderDetail>()
+                .HasOne(od => od.MenuItem)
+                // Navigation Property in order
+                .WithMany(o => o.OrderDetails)
+                // Fk
+                .HasForeignKey(od => od.MenuItemId);
+            
+        }
+        
+        // ----------
         public ApplicationDbContext()
         {
         }

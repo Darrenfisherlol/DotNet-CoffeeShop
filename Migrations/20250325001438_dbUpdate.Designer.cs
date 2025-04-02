@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebApplication2.Data;
@@ -11,9 +12,11 @@ using WebApplication2.Data;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250325001438_dbUpdate")]
+    partial class dbUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -136,6 +139,9 @@ namespace WebApplication2.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(10,2)");
+
                     b.HasKey("OrderId");
 
                     b.HasIndex("CustomerId");
@@ -145,24 +151,29 @@ namespace WebApplication2.Migrations
 
             modelBuilder.Entity("WebApplication2.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("OrderId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("MenuItemId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("OrderDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OrderDetailId"));
 
+                    b.Property<int>("MenuItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(10,2)");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
-                    b.HasKey("OrderId", "MenuItemId");
+                    b.HasKey("OrderDetailId");
 
                     b.HasIndex("MenuItemId");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderDetails");
                 });
@@ -170,7 +181,7 @@ namespace WebApplication2.Migrations
             modelBuilder.Entity("WebApplication2.Models.MenuItem", b =>
                 {
                     b.HasOne("WebApplication2.Models.Coffee", "Coffee")
-                        .WithMany("MenuItems")
+                        .WithMany()
                         .HasForeignKey("CoffeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -181,7 +192,7 @@ namespace WebApplication2.Migrations
             modelBuilder.Entity("WebApplication2.Models.Order", b =>
                 {
                     b.HasOne("WebApplication2.Models.Customer", "Customer")
-                        .WithMany("Orders")
+                        .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -192,13 +203,13 @@ namespace WebApplication2.Migrations
             modelBuilder.Entity("WebApplication2.Models.OrderDetail", b =>
                 {
                     b.HasOne("WebApplication2.Models.MenuItem", "MenuItem")
-                        .WithMany("OrderDetails")
+                        .WithMany()
                         .HasForeignKey("MenuItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebApplication2.Models.Order", "Order")
-                        .WithMany("OrderDetails")
+                        .WithMany("Items")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -208,24 +219,9 @@ namespace WebApplication2.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("WebApplication2.Models.Coffee", b =>
-                {
-                    b.Navigation("MenuItems");
-                });
-
-            modelBuilder.Entity("WebApplication2.Models.Customer", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("WebApplication2.Models.MenuItem", b =>
-                {
-                    b.Navigation("OrderDetails");
-                });
-
             modelBuilder.Entity("WebApplication2.Models.Order", b =>
                 {
-                    b.Navigation("OrderDetails");
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

@@ -28,11 +28,13 @@ namespace WebApplication2.Models
         [DataType(DataType.DateTime)]
         public DateTime JoinDate { get; set; }
         
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        
         public Customer(){}
         
-        public Customer(string fistName, string lastName, string email, string phoneNumber, DateTime joinDate)
+        public Customer(string firstName, string lastName, string email, string phoneNumber, DateTime joinDate)
         {
-            this.FirstName = fistName;
+            this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
             this.Phone = phoneNumber;

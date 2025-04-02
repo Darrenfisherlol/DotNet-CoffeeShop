@@ -32,21 +32,12 @@
             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
         </div>
         
-        @* @ViewBag.RoastOptions *@
-
         <div class="form-group mb-3">
             <label class="form-label fw-bold">Select a Roast</label>
             @Html.DropDownListFor(model => model.CoffeeId, (SelectList)ViewBag.RoastOptions,
                 "Select Roast", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CoffeeId, "", new { @class = "text-danger" })
         </div>
-        
-        @* <div class="form-group mb-3"> *@
-        @*     @Html.LabelFor(model => model.CoffeeId, new { @class = "form-label fw-bold" }) *@
-        @*     @Html.TextAreaFor(model => model.CoffeeId, new { @class = "form-control", rows = "3", placeholder = "What blend of beans it this?" }) *@
-        @*     @Html.ValidationMessageFor(model => model.CoffeeId, "", new { @class = "text-danger" }) *@
-        @* </div> *@
-        
         
         <div class="form-group mb-3">
             @Html.LabelFor(model => model.Type, new { @class = "form-label fw-bold" })
@@ -59,7 +50,7 @@
         
         <div class="form-group mb-3">
             @Html.LabelFor(model => model.Price, new { @class = "form-label fw-bold" })
-            @Html.TextAreaFor(model => model.Price, new { @class = "form-control", rows = "3", placeholder = "Add a Price" })
+            @Html.TextAreaFor(model => model.Price, new { @class = "form-control", placeholder = "Add a Price", type = "number", step = "0.01", min = ".01", required = "required" })
             @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
         </div>
         
